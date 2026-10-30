@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}消息中心{% endblock %}
+{% block content %}
+<div class="container" style="max-width:860px">
+  <h1 style="font-size:22px;margin-bottom:14px">💬 消息中心</h1>
+  <p class="small muted mb-14">与订单相关的买卖双方沟通都在这里，可直接给对方发订单咨询。</p>
+
+  {% if my_orders %}
+  <div class="card mb-14" style="border-color:var(--green-500)">
+    <h3>🆕 发起订单咨询</h3>
+    <p class="small muted mb-8">选择一个你的订单，描述问题，直接发给对应商家</p>
+    <form id="askForm" method="post" class="flex gap-8 wrap">
+      <select id="askOrder" class="form-control" style="flex:1 1 260px" required>
+        <option value="">— 选择要咨询的订单 —</option>
+        {% for o in my_orders %}
+        <option value="{{ o.id }}">{{ o.order_no }} · {{ o.items or '商品' }}（{{ o.status }}）</option>
+        {% endfor %}
+      </select>
+      <input type="hidden" name="next" value="/messages">
+      <input class="form-control" name="content" id="askContent" style="flex:2 1 320px" required placeholder="描述你的问题，如：什么时候发货？能换地址吗？">
+      <button class="btn" type="submit">发送给商家</button>
+    </form>
+  </div>
+  {% endif %}
+
+  {% for c in convs %}
+  <div class="card mb-14">
+    <div class="flex between center wrap gap-8">
+      <div>
+        <b>{{ ROLE_ICONS[c.peer_role] }} 与 {{ c.peer_name }}</b>（{{ role_names[c.peer_role] }}）
+        <div class="small muted">订单 {{ c.order_no }} ·
+          {% for it in c['items'] %}{{ it.product_name }} × {{ it.quantity }}{% if not loop.last %}、{% endif %}{% endfor %}
+        </div>
+        {% if c.last_msg %}
+        <div class="small mt-8">最新：{{ c.last_msg }} <span class="muted">· {{ c.last_at }}</span></div>
+        {% else %}
+        <div class="small muted mt-8">暂无对话，发起第一条咨询</div>
+        {% endif %}
+      </div>
+      <a class="btn btn-outline btn-sm" href="/order/{{ c.id }}">打开完整对话</a>
+    </div>
+    <form method="post" action="/order/{{ c.id }}/message" class="flex gap-8 mt-14">
+      <input type="hidden" name="next" value="/messages">
+      <input class="form-control" name="content" required placeholder="给 {{ c.peer_name }} 发消息（咨询规格、发货、收货…）">
+      <button class="btn">发送</button>
+    </form>
+  </div>
+  {% else %}
+  <div class="card empty"><div class="big">📭</div>还没有订单对话<br><a class="btn mt-14" href="/mall">去商城下单</a></div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('askForm').addEventListener('submit', function(e){
+  var oid = document.getElementById('askOrder').value;
+  if(!oid){ e.preventDefault(); alert('请先选择要咨询的订单'); return; }
+  this.action = '/order/' + oid + '/message';
+});
+</script>
+{% endblock %}

@@ -1,0 +1,45 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+  <data>
+    <shape type="rect" topLeftX="64" topLeftY="52" width="5" height="26"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="78" topLeftY="50" width="800" height="34">
+      <content textType="title" fontSize="24" bold="true" color="rgb(25,25,25)"><p><span color="rgb(76,122,90)">四、</span>一条清江鲈鱼的完整链路（时间线）</p></content>
+    </shape>
+    <line startX="64" startY="96" endX="896" endY="96"><border color="rgb(220,220,220)" width="1"/></line>
+
+    <line startX="138" startY="200" endX="282" endY="200"><border color="rgb(76,122,90)" width="2"/></line>
+    <line startX="318" startY="200" endX="462" endY="200"><border color="rgb(76,122,90)" width="2"/></line>
+    <line startX="498" startY="200" endX="642" endY="200"><border color="rgb(76,122,90)" width="2"/></line>
+    <line startX="678" startY="200" endX="822" endY="200"><border color="rgb(76,122,90)" width="2"/></line>
+
+    <shape type="text" topLeftX="50" topLeftY="122" width="140" height="60"><content textType="body" fontSize="14" bold="true" color="rgb(30,30,30)" textAlign="center" lineSpacing="multiple:1.4"><p>养殖</p><p><span fontSize="11" color="rgb(110,110,110)">farmer1</span></p></content></shape>
+    <shape type="ellipse" topLeftX="102" topLeftY="182" width="36" height="36"><fill><fillColor color="rgb(255,255,255)"/></fill><border color="rgb(76,122,90)" width="2"/></shape>
+    <shape type="text" topLeftX="108" topLeftY="190" width="24" height="20"><content textType="body" fontSize="12" bold="true" color="rgb(76,122,90)" textAlign="center"><p>1</p></content></shape>
+    <shape type="text" topLeftX="50" topLeftY="234" width="140" height="120"><content textType="caption" fontSize="11" color="rgb(80,80,80)" textAlign="center" lineSpacing="multiple:1.6"><p>投苗 500 kg<br/>饲料 / 用药记录<br/>水质检测<br/>捕捞时间</p></content></shape>
+
+    <shape type="text" topLeftX="230" topLeftY="122" width="140" height="60"><content textType="body" fontSize="14" bold="true" color="rgb(30,30,30)" textAlign="center" lineSpacing="multiple:1.4"><p>加工</p><p><span fontSize="11" color="rgb(110,110,110)">contractor1</span></p></content></shape>
+    <shape type="ellipse" topLeftX="282" topLeftY="182" width="36" height="36"><fill><fillColor color="rgb(255,255,255)"/></fill><border color="rgb(76,122,90)" width="2"/></shape>
+    <shape type="text" topLeftX="288" topLeftY="190" width="24" height="20"><content textType="body" fontSize="12" bold="true" color="rgb(76,122,90)" textAlign="center"><p>2</p></content></shape>
+    <shape type="text" topLeftX="230" topLeftY="234" width="140" height="120"><content textType="caption" fontSize="11" color="rgb(80,80,80)" textAlign="center" lineSpacing="multiple:1.6"><p>批次入库<br/>宰杀 / 分割<br/>真空包装<br/>加工记录</p></content></shape>
+
+    <shape type="text" topLeftX="410" topLeftY="122" width="140" height="60"><content textType="body" fontSize="14" bold="true" color="rgb(30,30,30)" textAlign="center" lineSpacing="multiple:1.4"><p>物流</p><p><span fontSize="11" color="rgb(110,110,110)">logistics1</span></p></content></shape>
+    <shape type="ellipse" topLeftX="462" topLeftY="182" width="36" height="36"><fill><fillColor color="rgb(255,255,255)"/></fill><border color="rgb(76,122,90)" width="2"/></shape>
+    <shape type="text" topLeftX="468" topLeftY="190" width="24" height="20"><content textType="body" fontSize="12" bold="true" color="rgb(76,122,90)" textAlign="center"><p>3</p></content></shape>
+    <shape type="text" topLeftX="410" topLeftY="234" width="140" height="120"><content textType="caption" fontSize="11" color="rgb(80,80,80)" textAlign="center" lineSpacing="multiple:1.6"><p>-18℃ 冷链温度<br/>运输轨迹打点<br/>揽收 / 中转<br/>送达时间</p></content></shape>
+
+    <shape type="text" topLeftX="590" topLeftY="122" width="140" height="60"><content textType="body" fontSize="14" bold="true" color="rgb(30,30,30)" textAlign="center" lineSpacing="multiple:1.4"><p>零售</p><p><span fontSize="11" color="rgb(110,110,110)">retailer1</span></p></content></shape>
+    <shape type="ellipse" topLeftX="642" topLeftY="182" width="36" height="36"><fill><fillColor color="rgb(255,255,255)"/></fill><border color="rgb(76,122,90)" width="2"/></shape>
+    <shape type="text" topLeftX="648" topLeftY="190" width="24" height="20"><content textType="body" fontSize="12" bold="true" color="rgb(76,122,90)" textAlign="center"><p>4</p></content></shape>
+    <shape type="text" topLeftX="590" topLeftY="234" width="140" height="120"><content textType="caption" fontSize="11" color="rgb(80,80,80)" textAlign="center" lineSpacing="multiple:1.6"><p>进货入库<br/>自定义价转售<br/>上架<br/>成交记录</p></content></shape>
+
+    <shape type="text" topLeftX="785" topLeftY="122" width="110" height="60"><content textType="body" fontSize="14" bold="true" color="rgb(40,80,50)" textAlign="center" lineSpacing="multiple:1.4"><p>消费者</p><p><span fontSize="11" color="rgb(110,110,110)">扫码验真</span></p></content></shape>
+    <shape type="ellipse" topLeftX="822" topLeftY="182" width="36" height="36"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="828" topLeftY="190" width="24" height="20"><content textType="body" fontSize="12" bold="true" color="rgb(255,255,255)" textAlign="center"><p>5</p></content></shape>
+    <shape type="text" topLeftX="785" topLeftY="234" width="110" height="120"><content textType="caption" fontSize="11" color="rgb(60,70,62)" textAlign="center" lineSpacing="multiple:1.6"><p>扫溯源码<br/>看全程<br/>每步验真</p></content></shape>
+
+    <shape type="rect" topLeftX="64" topLeftY="378" width="832" height="84"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(225,228,225)" width="1"/></shape>
+    <shape type="text" topLeftX="84" topLeftY="392" width="792" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(40,40,40)"><p>演示批次：清江鲈鱼 TRC20260918170936668</p></content></shape>
+    <shape type="text" topLeftX="84" topLeftY="422" width="792" height="30"><content textType="body" fontSize="12" color="rgb(70,70,70)" lineSpacing="multiple:1.5"><p>湖北宜昌清江水库 · 500 kg · 全程 47 条记录 · 链上累计 111 区块 · 销售成交同样写入链路</p></content></shape>
+  </data>
+  <note><content textType="body"><p>用时间线展示五个环节，从养殖到消费者，节点带编号，最后消费者节点为绿色实心。底部是真实演示批次统计。</p></content></note>
+</slide>

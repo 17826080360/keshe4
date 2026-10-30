@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ code }} · 页面错误{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="auth-wrap">
+    <div class="card" style="text-align:center">
+      <div style="font-size:56px">⚠️</div>
+      <h2 style="margin:8px 0">{{ code }}</h2>
+      <p class="muted">{{ msg }}</p>
+      <div class="mt-20"><a class="btn" href="/">返回首页</a></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

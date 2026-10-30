@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}商品审核{% endblock %}
+{% block content %}
+<div class="container">
+  <h1 style="font-size:22px;margin-bottom:14px">🏷️ 商品审核</h1>
+  <div class="card">
+    <table class="table">
+      <tr><th>ID</th><th>商品</th><th>卖家</th><th>类型</th><th>价格</th><th>库存</th><th>溯源批次</th><th>状态</th><th>操作</th></tr>
+      {% for p in rows %}
+      <tr>
+        <td class="num">{{ p.id }}</td>
+        <td>{{ p.image }} <b>{{ p.title }}</b><br><span class="small muted">{{ p.description[:40] or '' }}</span></td>
+        <td class="small">{{ ROLE_ICONS[p.seller_role] }} {{ p.seller_name }}</td>
+        <td>{% if p.product_type == 'goods' %}<span class="badge badge-green">实物</span>{% else %}<span class="badge badge-gray">服务</span>{% endif %}</td>
+        <td class="num">¥{{ p.price }}/{{ p.unit }}</td>
+        <td class="num">{{ p.stock }}</td>
+        <td>
+          {% if p.batch_id %}
+          {% set b = None %}
+          <a class="small" href="/admin/chain">批次#{{ p.batch_id }}</a>
+          {% else %}<span class="muted small">—</span>{% endif %}
+        </td>
+        <td>
+          {% if p.status == 'on_sale' %}<span class="badge badge-green">在售</span>
+          {% elif p.status == 'off_sale' %}<span class="badge badge-gray">下架</span>
+          {% else %}<span class="badge badge-red">{{ p.status }}</span>{% endif %}
+        </td>
+        <td>
+          <div class="flex gap-8">
+            {% if p.status != 'on_sale' %}
+            <form method="post" action="/admin/products/{{ p.id }}/on_sale"><button class="btn btn-sm">上架</button></form>
+            {% endif %}
+            {% if p.status == 'on_sale' %}
+            <form method="post" action="/admin/products/{{ p.id }}/off_sale"><button class="btn btn-ghost btn-sm">下架</button></form>
+            {% endif %}
+            <form method="post" action="/admin/products/{{ p.id }}/rejected"><button class="btn btn-danger btn-sm">驳回</button></form>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

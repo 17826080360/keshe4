@@ -1,0 +1,52 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgba(248,250,247,1)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="60" width="800" height="50">
+      <content textType="title" fontSize="32" bold="true" color="rgba(31,61,42,1)"><p>汇报目录</p></content>
+    </shape>
+    <shape type="rect" topLeftX="80" topLeftY="120" width="50" height="3"><fill><fillColor color="rgba(63,115,82,1)"/></fill></shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="160" width="380" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="175" width="60" height="60"><content textType="title" fontSize="28" bold="true" color="rgba(63,115,82,1)"><p>01</p></content></shape>
+    <shape type="text" topLeftX="160" topLeftY="180" width="280" height="30"><content textType="body" fontSize="18" bold="true" color="rgba(40,50,45,1)"><p>需求分析</p></content></shape>
+    <shape type="text" topLeftX="160" topLeftY="212" width="280" height="30"><content textType="body" fontSize="12" color="rgba(120,130,120,1)"><p>食品安全痛点与系统目标</p></content></shape>
+
+    <shape type="rect" topLeftX="500" topLeftY="160" width="380" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="520" topLeftY="175" width="60" height="60"><content textType="title" fontSize="28" bold="true" color="rgba(63,115,82,1)"><p>02</p></content></shape>
+    <shape type="text" topLeftX="580" topLeftY="180" width="280" height="30"><content textType="body" fontSize="18" bold="true" color="rgba(40,50,45,1)"><p>功能介绍</p></content></shape>
+    <shape type="text" topLeftX="580" topLeftY="212" width="280" height="30"><content textType="body" fontSize="12" color="rgba(120,130,120,1)"><p>多角色 · 溯源全链路 · 商城交易</p></content></shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="270" width="380" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="285" width="60" height="60"><content textType="title" fontSize="28" bold="true" color="rgba(63,115,82,1)"><p>03</p></content></shape>
+    <shape type="text" topLeftX="160" topLeftY="290" width="280" height="30"><content textType="body" fontSize="18" bold="true" color="rgba(40,50,45,1)"><p>数据库设计</p></content></shape>
+    <shape type="text" topLeftX="160" topLeftY="322" width="280" height="30"><content textType="body" fontSize="12" color="rgba(120,130,120,1)"><p>批次-环节-记录三层模型</p></content></shape>
+
+    <shape type="rect" topLeftX="500" topLeftY="270" width="380" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="520" topLeftY="285" width="60" height="60"><content textType="title" fontSize="28" bold="true" color="rgba(63,115,82,1)"><p>04</p></content></shape>
+    <shape type="text" topLeftX="580" topLeftY="290" width="280" height="30"><content textType="body" fontSize="18" bold="true" color="rgba(40,50,45,1)"><p>系统架构与技术栈</p></content></shape>
+    <shape type="text" topLeftX="580" topLeftY="322" width="280" height="30"><content textType="body" fontSize="12" color="rgba(120,130,120,1)"><p>Flask + MySQL + 区块链 + AI 助手</p></content></shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="380" width="380" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="395" width="60" height="60"><content textType="title" fontSize="28" bold="true" color="rgba(63,115,82,1)"><p>05</p></content></shape>
+    <shape type="text" topLeftX="160" topLeftY="400" width="280" height="30"><content textType="body" fontSize="18" bold="true" color="rgba(40,50,45,1)"><p>总结</p></content></shape>
+    <shape type="text" topLeftX="160" topLeftY="432" width="280" height="30"><content textType="body" fontSize="12" color="rgba(120,130,120,1)"><p>优势与不足</p></content></shape>
+
+    <shape type="rect" topLeftX="500" topLeftY="380" width="380" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="520" topLeftY="395" width="60" height="60"><content textType="title" fontSize="28" bold="true" color="rgba(63,115,82,1)"><p>06</p></content></shape>
+    <shape type="text" topLeftX="580" topLeftY="400" width="280" height="30"><content textType="body" fontSize="18" bold="true" color="rgba(40,50,45,1)"><p>团队与展望</p></content></shape>
+    <shape type="text" topLeftX="580" topLeftY="432" width="280" height="30"><content textType="body" fontSize="12" color="rgba(120,130,120,1)"><p>小组成员与未来规划</p></content></shape>
+  </data>
+  <note><content textType="body"><p>快速过一遍六个部分，告诉评委今天会讲什么。</p></content></note>
+</slide>

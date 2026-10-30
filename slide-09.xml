@@ -1,0 +1,39 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="linear-gradient(135deg,rgba(31,61,42,1) 0%,rgba(63,115,82,1) 100%)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="60" width="800" height="40">
+      <content textType="caption" fontSize="12" color="rgba(200,220,205,1)" letterSpacing="2"><p>PART 06 · 团队与展望</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="130" width="360" height="280" presetHandlers="12">
+      <fill><fillColor color="rgba(255,255,255,0.12)"/></fill>
+      <border color="rgba(255,255,255,0.4)" width="1" dashArray="dash"/>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="240" width="360" height="40">
+      <content textType="body" fontSize="16" color="rgba(230,240,232,1)" textAlign="center"><p>小组成员合影</p></content>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="280" width="360" height="30">
+      <content textType="caption" fontSize="11" color="rgba(180,200,185,1)" textAlign="center"><p>（此处替换为小组合影）</p></content>
+    </shape>
+
+    <shape type="text" topLeftX="490" topLeftY="130" width="400" height="40">
+      <content textType="headline" fontSize="22" bold="true" color="rgba(255,255,255,1)"><p>未来展望</p></content>
+    </shape>
+    <shape type="text" topLeftX="490" topLeftY="190" width="400" height="220">
+      <content textType="body" fontSize="14" color="rgba(230,240,232,1)" lineSpacing="multiple:1.9">
+        <ul>
+          <li><p>接入真实联盟链 / 以太坊测试网</p></li>
+          <li><p>上真实 Redis，支撑扫码高并发</p></li>
+          <li><p>对接真实支付与电子发票</p></li>
+          <li><p>移动端 H5 / 小程序扫码入口</p></li>
+          <li><p>AI 助手扩展为智能选品与风险预警</p></li>
+        </ul>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="80" topLeftY="460" width="800" height="40">
+      <content textType="headline" fontSize="20" bold="true" color="rgba(255,220,150,1)" textAlign="center"><p>感谢聆听 · 恳请老师批评指正</p></content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>最后一页：放小组合影，讲未来要做的事，然后致谢。</p></content></note>
+</slide>

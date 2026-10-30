@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}用户管理{% endblock %}
+{% block content %}
+<div class="container">
+  <h1 style="font-size:22px;margin-bottom:14px">👥 用户管理</h1>
+  <div class="card">
+    <table class="table">
+      <tr><th>ID</th><th>用户名</th><th>姓名</th><th>角色</th><th>单位</th><th>钱包余额</th><th>状态</th><th>注册时间</th><th>操作</th></tr>
+      {% for u in rows %}
+      <tr>
+        <td class="num">{{ u.id }}</td>
+        <td><b>{{ u.username }}</b></td>
+        <td>{{ u.real_name }}</td>
+        <td>{{ ROLE_ICONS[u.role] }} {{ role_names[u.role] }}</td>
+        <td class="small">{{ u.company or '—' }}</td>
+        <td class="num">¥{{ "%.2f"|format(u.balance) }}</td>
+        <td>{% if u.status == 'active' %}<span class="badge badge-green">正常</span>{% else %}<span class="badge badge-red">禁用</span>{% endif %}</td>
+        <td class="small muted">{{ u.created_at }}</td>
+        <td>
+          {% if u.username != 'admin' %}
+          <form method="post" action="/admin/users/{{ u.id }}/toggle">
+            <button class="btn btn-sm {% if u.status == 'active' %}btn-danger{% else %}btn-outline{% endif %}">
+              {% if u.status == 'active' %}禁用{% else %}启用{% endif %}
+            </button>
+          </form>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

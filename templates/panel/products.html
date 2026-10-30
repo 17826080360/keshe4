@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}商品发布管理{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+  <h1 style="font-size:22px;margin-bottom:14px">🏷️ 商品发布管理</h1>
+
+  {% if g.user.role in ['farmer','contractor','logistics','retailer'] %}
+  <div class="card mb-14">
+    <h3>➕ 发布新商品</h3>
+    {% if g.user.role == 'retailer' %}
+    <div class="mb-14" style="background:var(--green-50);border:1px solid var(--green-500);border-radius:10px;padding:12px 14px">
+      零售商建议先<a href="/mall/orders?side=buy"><b>进货</b></a>（从农户/加工商批量买入），再在<a href="/retailer/inventory"><b>库存转售</b></a>页面上架，转售商品自动关联原溯源批次。
+    </div>
+    {% endif %}
+    <form method="post" action="/products/create" class="form-row">
+      <div class="form-group">
+        <label>商品标题 *</label>
+        <input class="form-control" name="title" required placeholder="如：清江鲈鱼·真空锁鲜装">
+      </div>
+      <div class="form-group">
+        <label>品类</label>
+        <input class="form-control" name="category" value="水产" placeholder="水产/蔬菜/水果">
+      </div>
+      <div class="form-group">
+        <label>售价（元）*</label>
+        <input class="form-control" type="number" name="price" step="0.01" min="0.01" required>
+      </div>
+      <div class="form-group">
+        <label>库存</label>
+        <input class="form-control" type="number" name="stock" step="0.1" value="100">
+      </div>
+      <div class="form-group">
+        <label>单位</label>
+        <input class="form-control" name="unit" value="kg">
+      </div>
+      <div class="form-group">
+        <label>商品图标</label>
+        <input class="form-control" name="image" value="🥬" placeholder="emoji，如 🐟🥬🍎">
+      </div>
+      <div class="form-group">
+        <label>商品类型</label>
+        <select class="form-control" name="product_type" id="ptypeSel">
+          <option value="goods" selected>实物商品（可溯源）</option>
+          <option value="service">物流服务</option>
+        </select>
+        {% if g.user.role == 'logistics' %}<input type="hidden" name="product_type" value="service">{% endif %}
+      </div>
+      <div class="form-group" id="batchField">
+        <label>关联溯源码（实物必填）</label>
+        <input class="form-control" name="batch_code" placeholder="如：TRC20260918170827501">
+        <div class="form-hint">可在「批次管理」查看；商品上架即写入溯源链</div>
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <label>商品描述</label>
+        <input class="form-control" name="description" placeholder="卖点、规格说明">
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <button class="btn btn-lg">发布上架（上架记录上链）</button>
+      </div>
+    </form>
+  </div>
+  {% endif %}
+
+  <div class="card">
+    <h3>📋 在售商品</h3>
+    <table class="table">
+      <tr><th>商品</th><th>价格</th><th>库存</th><th>溯源</th><th>销量</th><th>操作</th></tr>
+      {% for p in products %}
+      <tr>
+        <td>{{ p.image }} <b>{{ p.title }}</b><br><span class="small muted">{{ ROLE_ICONS[p.seller_role] }} {{ role_names[p.seller_role] }}</span></td>
+        <td class="num">¥{{ p.price }}/{{ p.unit }}</td>
+        <td class="num">{{ p.stock }}</td>
+        <td>{% if p.batch_id %}<a class="trace-tag" href="/trace/{{ p.batch.batch_code if p.batch else '' }}">🔗 {{ p.batch.batch_code if p.batch else '' }}</a>{% else %}<span class="badge badge-gray">服务</span>{% endif %}</td>
+        <td class="num">{{ p.sales_count }}</td>
+        <td>
+          <a class="btn btn-outline btn-sm" href="/mall/{{ p.id }}">查看</a>
+          <button class="btn btn-outline btn-sm"
+                  data-id="{{ p.id }}" data-title="{{ p.title }}" data-price="{{ p.price }}"
+                  data-stock="{{ p.stock }}" data-unit="{{ p.unit }}"
+                  data-desc="{{ p.description or '' }}"
+                  onclick="openEdit(this)">编辑</button>
+          <form method="post" action="/products/{{ p.id }}/toggle" style="display:inline">
+            <button class="btn btn-ghost btn-sm">下架</button>
+          </form>
+        </td>
+      </tr>
+      {% else %}
+      <tr><td colspan="6" class="empty">还没有在售商品</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% if off %}
+  <div class="card mt-20">
+    <h3>📦 已下架商品</h3>
+    {% for p in off %}
+    <div class="flex between center" style="padding:8px 0;border-bottom:1px solid var(--line)">
+      <div>{{ p.image }} <b>{{ p.title }}</b> <span class="small muted">¥{{ p.price }}/{{ p.unit }}</span></div>
+      <form method="post" action="/products/{{ p.id }}/toggle"><button class="btn btn-outline btn-sm">重新上架</button></form>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+
+<div id="editModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;padding:24px;width:420px;max-width:92vw;">
+    <h3 style="margin:0 0 14px">✏️ 修改商品信息</h3>
+    <form id="editForm" method="post" class="form-row">
+      <div class="form-group"><label>商品标题</label><input class="form-control" name="title" id="ef-title" required></div>
+      <div class="form-group"><label>售价（元）</label><input class="form-control" type="number" step="0.01" name="price" id="ef-price" required></div>
+      <div class="form-group"><label>库存</label><input class="form-control" type="number" step="0.1" name="stock" id="ef-stock"></div>
+      <div class="form-group"><label>单位</label><input class="form-control" name="unit" id="ef-unit"></div>
+      <div class="form-group" style="grid-column:1/-1"><label>商品描述</label><input class="form-control" name="description" id="ef-desc"></div>
+      <div style="grid-column:1/-1;display:flex;gap:10px;justify-content:flex-end">
+        <button type="button" class="btn btn-outline" onclick="closeEdit()">取消</button>
+        <button class="btn">保存修改</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+var sel = document.getElementById('ptypeSel');
+var batchField = document.getElementById('batchField');
+if (sel) sel.addEventListener('change', function(){
+  batchField.style.display = (sel.value === 'goods') ? '' : 'none';
+});
+function openEdit(btn){
+  var m = document.getElementById('editModal');
+  document.getElementById('editForm').action = '/products/' + btn.dataset.id + '/update';
+  document.getElementById('ef-title').value = btn.dataset.title;
+  document.getElementById('ef-price').value = btn.dataset.price;
+  document.getElementById('ef-stock').value = btn.dataset.stock;
+  document.getElementById('ef-unit').value = btn.dataset.unit;
+  document.getElementById('ef-desc').value = btn.dataset.desc;
+  m.style.display = 'flex';
+}
+function closeEdit(){ document.getElementById('editModal').style.display = 'none'; }
+</script>
+{% endblock %}

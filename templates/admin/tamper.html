@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}篡改演示工具{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+  <h1 style="font-size:22px;margin-bottom:14px">⚔️ 篡改演示工具（答辩演示点）</h1>
+
+  <div class="card mb-14" style="background:var(--amber-100);border-color:var(--amber-600)">
+    <h3>📖 演示说明</h3>
+    <p class="small">本工具模拟<b>攻击者直接修改业务数据库明文</b>的场景：修改某条溯源记录的内容，但<b>不上链</b>。
+    随后进入溯源报告，链上校验会重算该记录哈希并与链上存证比对，<b>当场拒绝</b>并标红篡改记录。
+    通过「恢复原文」可一键还原，恢复后校验重新通过。</p>
+    <div class="flex gap-8 mt-8">
+      <span class="badge badge-red">演示步骤：</span>
+      <span class="small">① 选记录 → ② 改内容 → ③ 去扫码/溯源看校验失败 → ④ 回来恢复</span>
+    </div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>✏️ 模拟篡改</h3>
+      <form method="post" action="/admin/tamper">
+        <div class="form-group">
+          <label>选择要篡改的记录</label>
+          <select class="form-control" name="record_id" id="recSel" required>
+            <option value="">— 选择记录 —</option>
+            {% for r in records %}
+            <option value="{{ r.id }}" data-content="{{ r.content|e }}">{{ r.id }} · {{ r.record_name }}（{{ r.batch_code }}）</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label>要篡改的字段</label>
+          <select class="form-control" name="field" id="fieldSel" required>
+            <option value="">— 先选择记录 —</option>
+            <option value="__all__">（整体替换为 JSON）</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>新的值（伪造数据）</label>
+          <input class="form-control" name="new_value" id="newValue" required placeholder="例如：把温度 -18.0 改成 25.0">
+        </div>
+        <button class="btn btn-danger btn-lg">⚠️ 执行篡改（写库不上链）</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>📋 篡改日志与恢复</h3>
+      {% if logs %}
+      <table class="table">
+        <tr><th>记录</th><th>字段</th><th>时间</th><th>操作</th></tr>
+        {% for log in logs %}
+        <tr>
+          <td class="num">#{{ log.record_id }}（{{ log.record_type }}）</td>
+          <td class="small">{{ log.old_content[:40] }}… → {{ log.new_content[:30] }}…</td>
+          <td class="small muted">{{ log.created_at }}</td>
+          <td>
+            <form method="post" action="/admin/tamper/{{ log.record_id }}/restore">
+              <button class="btn btn-outline btn-sm">↩ 恢复原文</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <div class="empty">暂无篡改记录</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="card mt-20">
+    <h3>📜 全部记录（可篡改对象）</h3>
+    <table class="table">
+      <tr><th>ID</th><th>批次</th><th>类型</th><th>记录名</th><th>内容</th><th>链上状态</th></tr>
+      {% for r in records %}
+      <tr>
+        <td class="num">{{ r.id }}</td>
+        <td class="small" style="font-family:Consolas,monospace">{{ r.batch_code }}</td>
+        <td><span class="badge badge-gray">{{ r.record_type }}</span></td>
+        <td>{{ r.record_name }}</td>
+        <td class="small muted" style="max-width:280px">{{ r.content[:60] }}…</td>
+        <td>{% if r.chain_status == 'onchain' %}<span class="badge badge-green">✅</span>{% else %}<span class="badge badge-gray">待</span>{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+<script>
+var recSel = document.getElementById('recSel');
+var fieldSel = document.getElementById('fieldSel');
+recSel.addEventListener('change', function(){
+  var opt = recSel.options[recSel.selectedIndex];
+  var content = {};
+  try { content = JSON.parse(opt.getAttribute('data-content') || '{}'); } catch(e) {}
+  fieldSel.innerHTML = '<option value="">— 选择字段 —</option>';
+  fieldSel.innerHTML += '<option value="__all__">（整体替换为 JSON）</option>';
+  for (var k in content) {
+    var o = document.createElement('option');
+    o.value = k; o.textContent = k + '（当前：' + String(content[k]).slice(0,20) + '）';
+    fieldSel.appendChild(o);
+  }
+});
+</script>
+{% endblock %}

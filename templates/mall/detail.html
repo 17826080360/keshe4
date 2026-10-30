@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}{{ p.title }}{% endblock %}
+{% block content %}
+<div class="container" style="max-width:980px">
+  <div class="grid grid-2">
+    <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:280px;background:linear-gradient(135deg,var(--green-50),#fff)">
+      <span style="font-size:110px">{{ p.image }}</span>
+    </div>
+    <div class="card">
+      <h1 style="font-size:20px;margin-bottom:6px">{{ p.title }}</h1>
+      <div class="muted small mb-8">
+        {{ ROLE_ICONS[p.seller_role] }} 卖家：{{ p.seller_name }}{% if p.seller_company %}（{{ p.seller_company }}）{% endif %} · {{ role_names[p.seller_role] }}
+      </div>
+      <div style="font-size:26px;font-weight:800;color:var(--red-600);margin:10px 0">¥ {{ p.price }} <small style="font-size:13px;color:var(--ink-3)">/ {{ p.unit }}</small></div>
+      <div class="small muted mb-14">库存：{{ p.stock }} {{ p.unit }} · 已售：{{ p.sales_count }}</div>
+
+      {% if p.batch %}
+      <div style="background:var(--green-50);border:1px solid var(--green-500);border-radius:10px;padding:12px 14px;margin-bottom:14px">
+        <div class="flex between center">
+          <span><b>🔗 溯源批次：</b><span style="font-family:Consolas,monospace">{{ p.batch.batch_code }}</span></span>
+          {% if batch_ok %}<span class="badge badge-green">✅ 全链验证通过</span>
+          {% else %}<span class="badge badge-red">⚠️ 链上校验异常</span>{% endif %}
+        </div>
+        <div class="small muted mt-8">{{ p.batch.product_name }} · {{ p.batch.origin or "—" }} · 建档 {{ p.batch.created_at }}</div>
+        <a class="btn btn-outline btn-sm mt-8" href="/trace/{{ p.batch.batch_code }}">查看完整溯源报告 →</a>
+      </div>
+      {% else %}
+      <div style="background:var(--blue-100);border-radius:10px;padding:12px 14px;margin-bottom:14px">
+        🚚 本商品为<b>物流服务</b>：下单支付后由物流公司提供服务并确认完成，资金托管结算。
+      </div>
+      {% endif %}
+
+      {% if p.description %}<p class="muted mb-14">{{ p.description }}</p>{% endif %}
+
+      {% if g.user and g.user.id != p.seller_id and p.status == 'on_sale' %}
+      <form method="post" action="/checkout" class="flex gap-8">
+        <input type="hidden" name="buy_now" value="{{ p.id }}">
+        <div style="width:120px">
+          <input class="form-control" type="number" name="quantity" value="1" min="0.1" max="{{ p.stock }}" step="0.1" required>
+        </div>
+        <button class="btn btn-lg" style="flex:1">立即购买（托管付款）</button>
+      </form>
+      <form method="post" action="/cart/add" class="mt-8">
+        <input type="hidden" name="product_id" value="{{ p.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <button class="btn btn-outline btn-block">加入购物车</button>
+      </form>
+      {% elif not g.user %}
+      <a class="btn btn-block btn-lg" href="/login">登录后购买</a>
+      {% elif g.user.id == p.seller_id %}
+      <div class="empty">这是您发布的商品</div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if p.batch %}
+  <div class="card mt-20">
+    <h3>🏔️ 生产·销售·物流 全流程速览</h3>
+    <div class="flex gap-8 wrap">
+      <span class="stage-chip done">🌱 种养</span>
+      <span class="stage-chip done">🏭 加工</span>
+      <span class="stage-chip done">🚚 冷链物流</span>
+      <span class="stage-chip done">🏪 上架</span>
+      <span class="stage-chip done">🛒 销售</span>
+      <span class="muted small">完整记录请查看溯源报告</span>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

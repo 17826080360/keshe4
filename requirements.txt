@@ -1,0 +1,6 @@
+Flask>=3.0
+qrcode>=7.0
+lxml>=5.0
+redis>=5.0
+web3>=7.0
+py-solc-x>=2.0

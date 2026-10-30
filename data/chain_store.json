@@ -1,0 +1,1337 @@
+{
+ "genesis": "0xef1fa1258fdd9d2f7ac97b9d3ece67cccbc987f9bb547fa5f8cad0aa7d4b0242",
+ "blocks": [
+  {
+   "index": 0,
+   "timestamp": 1789722439,
+   "prev_hash": "0xef1fa1258fdd9d2f7ac97b9d3ece67cccbc987f9bb547fa5f8cad0aa7d4b0242",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0x6abac04767a703d7decf0c11377a76d9c841bfcdcbc52fb8a890e553e8f8a0e4",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x83dcdac3e8012c632a58404e820eadd97109c5b7497aec06a8024629716d7857"
+  },
+  {
+   "index": 1,
+   "timestamp": 1789722439,
+   "prev_hash": "0x83dcdac3e8012c632a58404e820eadd97109c5b7497aec06a8024629716d7857",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0x869554a6b600e79ee983cc3a769631d7e18c0491c6d59e56f99003846a832187",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xe3d4561124f22b6ea38d148b30231b45dc2e7fe04a8800e80ab5ec337c4b6304"
+  },
+  {
+   "index": 2,
+   "timestamp": 1789722439,
+   "prev_hash": "0xe3d4561124f22b6ea38d148b30231b45dc2e7fe04a8800e80ab5ec337c4b6304",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0xd799ba85b32be79d8690d029e4052a648b5669424deee6a51201e63d9817247e",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xaa903481ff3065b431cb3163f5614c9f0805e7fc3990ece44c5aee4693df1842"
+  },
+  {
+   "index": 3,
+   "timestamp": 1789722439,
+   "prev_hash": "0xaa903481ff3065b431cb3163f5614c9f0805e7fc3990ece44c5aee4693df1842",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0x137b637de9a63eb21afd6499721dce10d0272ffcda58fcfc90cfcdd7d8438df7",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x7ded9162de5d2e6a5bc3aa2a5af3a4d81f8eef3a9b852aeaaa293a5d8b31a9f3"
+  },
+  {
+   "index": 4,
+   "timestamp": 1789722439,
+   "prev_hash": "0x7ded9162de5d2e6a5bc3aa2a5af3a4d81f8eef3a9b852aeaaa293a5d8b31a9f3",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0x79187a2388f77f7f9dedde3503b6d975ab3aef22d5422278c8151470e753b04f",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x5ca881d60ac87608decdacc94711c47fdb30919fa7027520e72b9ad75d06cef3"
+  },
+  {
+   "index": 5,
+   "timestamp": 1789722439,
+   "prev_hash": "0x5ca881d60ac87608decdacc94711c47fdb30919fa7027520e72b9ad75d06cef3",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0x71c325b51a72bf3b9822338b17838c11805a77e045c2c7ae107600a9e6a09706",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x12fe27c3b1e579982556f290d0791c0b5645f7b4e7abb14aaa98f7bc01c9d0d4"
+  },
+  {
+   "index": 6,
+   "timestamp": 1789722440,
+   "prev_hash": "0x12fe27c3b1e579982556f290d0791c0b5645f7b4e7abb14aaa98f7bc01c9d0d4",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0xb71d0096be37c94552b5a846d996b5c4aa6240facc385384d5a5e2e6e84e23fe",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x9ca7d73c22048ce205caeeae405e66e07f25303faca7c7481681752d3aad6f93"
+  },
+  {
+   "index": 7,
+   "timestamp": 1789722440,
+   "prev_hash": "0x9ca7d73c22048ce205caeeae405e66e07f25303faca7c7481681752d3aad6f93",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0xf32a0a58e8d34cf9804da3dfe41331c95e75fa91b90946f6d2231991ea19de4b",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xd27959d09992196b0918f7c0a7722723e9a656c0ba414aa131f1659506e29bf5"
+  },
+  {
+   "index": 8,
+   "timestamp": 1789722440,
+   "prev_hash": "0xd27959d09992196b0918f7c0a7722723e9a656c0ba414aa131f1659506e29bf5",
+   "data": {
+    "batch_id": "TRC20260918170719794",
+    "data_hash": "0xdf9fb5c3511cc4f27a37a2ff09a325da36e35d975525d249c3128309e089e017",
+    "record_type": "retail",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x7b77186421d782fa7d48b51e816936077d9eabfc3425b7adec9b398e13d4fee1"
+  },
+  {
+   "index": 9,
+   "timestamp": 1789722507,
+   "prev_hash": "0x7b77186421d782fa7d48b51e816936077d9eabfc3425b7adec9b398e13d4fee1",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x6abac04767a703d7decf0c11377a76d9c841bfcdcbc52fb8a890e553e8f8a0e4",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xbd69fb57bd9844d7924cb0b95b079fb0aa1330713e1a45dc76f63a8d18776a63"
+  },
+  {
+   "index": 10,
+   "timestamp": 1789722507,
+   "prev_hash": "0xbd69fb57bd9844d7924cb0b95b079fb0aa1330713e1a45dc76f63a8d18776a63",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x869554a6b600e79ee983cc3a769631d7e18c0491c6d59e56f99003846a832187",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xc7d2f2eec738b00c23eff4296c2252fd8220e306022790a484c4360e9e58bcc5"
+  },
+  {
+   "index": 11,
+   "timestamp": 1789722507,
+   "prev_hash": "0xc7d2f2eec738b00c23eff4296c2252fd8220e306022790a484c4360e9e58bcc5",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0xd799ba85b32be79d8690d029e4052a648b5669424deee6a51201e63d9817247e",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xfff566a73bcfa3c135240efa82055106a18bf5ca20a7a01bc90c66da615abf01"
+  },
+  {
+   "index": 12,
+   "timestamp": 1789722507,
+   "prev_hash": "0xfff566a73bcfa3c135240efa82055106a18bf5ca20a7a01bc90c66da615abf01",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x137b637de9a63eb21afd6499721dce10d0272ffcda58fcfc90cfcdd7d8438df7",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xb664342fba193f052e63ef43af300626637f4cfd82ece17a12680770d2951850"
+  },
+  {
+   "index": 13,
+   "timestamp": 1789722507,
+   "prev_hash": "0xb664342fba193f052e63ef43af300626637f4cfd82ece17a12680770d2951850",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x79187a2388f77f7f9dedde3503b6d975ab3aef22d5422278c8151470e753b04f",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xc1b5716bab2f5a1a1505888a478f65d0ae077deb64bc7e220dd93fff79abcdc5"
+  },
+  {
+   "index": 14,
+   "timestamp": 1789722507,
+   "prev_hash": "0xc1b5716bab2f5a1a1505888a478f65d0ae077deb64bc7e220dd93fff79abcdc5",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x71c325b51a72bf3b9822338b17838c11805a77e045c2c7ae107600a9e6a09706",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xf91c6b06de9a86f5a0f3e064d26f23ef1a20926aaf9169799cf1c109eaf788d7"
+  },
+  {
+   "index": 15,
+   "timestamp": 1789722508,
+   "prev_hash": "0xf91c6b06de9a86f5a0f3e064d26f23ef1a20926aaf9169799cf1c109eaf788d7",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0xb71d0096be37c94552b5a846d996b5c4aa6240facc385384d5a5e2e6e84e23fe",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xf6fdd68b4a211275baa5b117ab1ddf01a3b1dec037b6b3650d0ca0e144fee5be"
+  },
+  {
+   "index": 16,
+   "timestamp": 1789722508,
+   "prev_hash": "0xf6fdd68b4a211275baa5b117ab1ddf01a3b1dec037b6b3650d0ca0e144fee5be",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0xf32a0a58e8d34cf9804da3dfe41331c95e75fa91b90946f6d2231991ea19de4b",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xa92d1b11e9adb4f4b2ca368001055b9280f66eaef5ca3dde76413e0e76d9e1bb"
+  },
+  {
+   "index": 17,
+   "timestamp": 1789722508,
+   "prev_hash": "0xa92d1b11e9adb4f4b2ca368001055b9280f66eaef5ca3dde76413e0e76d9e1bb",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x9c5ce60cad9660566e695e64a86c1ea419c900e3221626333b12eb56a5887adb",
+    "record_type": "retail",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x7fc13aa7c024ee068ad68c4c663762a0310ce3eeb2011dbf089ea797d55a7631"
+  },
+  {
+   "index": 18,
+   "timestamp": 1789722508,
+   "prev_hash": "0x7fc13aa7c024ee068ad68c4c663762a0310ce3eeb2011dbf089ea797d55a7631",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x825323f011409b9f732cd022f5e7355df093855e8047a61830c9f29fe8b916ef",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xc4e1de3d452d38f27d663bf8c6965e3eb466659dbd7f4dbbcf33888de57b00b6"
+  },
+  {
+   "index": 19,
+   "timestamp": 1789722509,
+   "prev_hash": "0xc4e1de3d452d38f27d663bf8c6965e3eb466659dbd7f4dbbcf33888de57b00b6",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x2053e8a6e27aed861c589c36bb92d3a1245cda8688dca2b649db23446402f246",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x4edf4e1ac26a97e5c5ac71455fb508ca9a5b722e83a91f386e210c3feaadb554"
+  },
+  {
+   "index": 20,
+   "timestamp": 1789722509,
+   "prev_hash": "0x4edf4e1ac26a97e5c5ac71455fb508ca9a5b722e83a91f386e210c3feaadb554",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0xdd244f508a9f6b19a3e047295fb6212182a3c72018b43bcf7490d68e0d9e0a3d",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x23c0a0a5808b1062113f6fd162dd6e452c440b7bb209dc546a34014240c7e27a"
+  },
+  {
+   "index": 21,
+   "timestamp": 1789722509,
+   "prev_hash": "0x23c0a0a5808b1062113f6fd162dd6e452c440b7bb209dc546a34014240c7e27a",
+   "data": {
+    "batch_id": "LOG:LOG202609181708910",
+    "data_hash": "0x6025adc9b07e76f86edb24c1a8d147813d39b324dd8175f7d0893e511c6913f2",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0xbaa8e8a9a5c40d1e84a62a6a3518d31ee2ebd74afdd87fecce0dc28bc0b1a73b"
+  },
+  {
+   "index": 22,
+   "timestamp": 1789722509,
+   "prev_hash": "0xbaa8e8a9a5c40d1e84a62a6a3518d31ee2ebd74afdd87fecce0dc28bc0b1a73b",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x6025adc9b07e76f86edb24c1a8d147813d39b324dd8175f7d0893e511c6913f2",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xf8e7af54af624f929ed4d9dd16885d58c08a5182243ed5255373d6ab25f48263"
+  },
+  {
+   "index": 23,
+   "timestamp": 1789722509,
+   "prev_hash": "0xf8e7af54af624f929ed4d9dd16885d58c08a5182243ed5255373d6ab25f48263",
+   "data": {
+    "batch_id": "LOG:LOG202609181708910",
+    "data_hash": "0x5c9e94e79d0031ef99c6d60cbc180bb817918f6cfbb5af2ee918f1d3d8db1ecf",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x98798e5bf9fdfab87d647bb0772d67ac054b21f74fe42674ac1bfc80fbd00c97"
+  },
+  {
+   "index": 24,
+   "timestamp": 1789722509,
+   "prev_hash": "0x98798e5bf9fdfab87d647bb0772d67ac054b21f74fe42674ac1bfc80fbd00c97",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x5c9e94e79d0031ef99c6d60cbc180bb817918f6cfbb5af2ee918f1d3d8db1ecf",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xd3d494ea8888f9c867c84088ee04aeeabd9208c363c46d68d9077bf26856c264"
+  },
+  {
+   "index": 25,
+   "timestamp": 1789722510,
+   "prev_hash": "0xd3d494ea8888f9c867c84088ee04aeeabd9208c363c46d68d9077bf26856c264",
+   "data": {
+    "batch_id": "LOG:LOG202609181708910",
+    "data_hash": "0x36706d7c5b02a75d34a17eed4b26c98fe428429ce78d7d3570cd983845b6550b",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0xb95966435fec82fa3202aa3c71e2bfdcfaeb6803ed612ffa95b3e8f5aa8e7566"
+  },
+  {
+   "index": 26,
+   "timestamp": 1789722510,
+   "prev_hash": "0xb95966435fec82fa3202aa3c71e2bfdcfaeb6803ed612ffa95b3e8f5aa8e7566",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x36706d7c5b02a75d34a17eed4b26c98fe428429ce78d7d3570cd983845b6550b",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x42b7f88d7d139b324b6841b23bc01c6798f96c86dda97c169066426f9e18b735"
+  },
+  {
+   "index": 27,
+   "timestamp": 1789722510,
+   "prev_hash": "0x42b7f88d7d139b324b6841b23bc01c6798f96c86dda97c169066426f9e18b735",
+   "data": {
+    "batch_id": "LOG:LOG202609181708910",
+    "data_hash": "0x8ead710c874974eaa126dcadee0a1c8f3ce3aedd4fd6801b68b45b453733ddc9",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0xed25e026ee18f5b3b7fdd264ee2bca194c3b8049a2ce40a10b6df2e0493e4331"
+  },
+  {
+   "index": 28,
+   "timestamp": 1789722510,
+   "prev_hash": "0xed25e026ee18f5b3b7fdd264ee2bca194c3b8049a2ce40a10b6df2e0493e4331",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x8ead710c874974eaa126dcadee0a1c8f3ce3aedd4fd6801b68b45b453733ddc9",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x8fdbf26dc5c7cc85dddb1bef885c98dc6d32480a44c2af5b595865468cb7626d"
+  },
+  {
+   "index": 29,
+   "timestamp": 1789722510,
+   "prev_hash": "0x8fdbf26dc5c7cc85dddb1bef885c98dc6d32480a44c2af5b595865468cb7626d",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0xf9095110c6088896f5e64427ba9b6cc8b0db335cdb93c6016f1434fcb451d66a",
+    "record_type": "sale",
+    "operator": "retailer1"
+   },
+   "block_hash": "0xde88afda4ab74f01ad8de80077e8e807c700a4d77c58e041720cfb7855bdebae"
+  },
+  {
+   "index": 30,
+   "timestamp": 1789722511,
+   "prev_hash": "0xde88afda4ab74f01ad8de80077e8e807c700a4d77c58e041720cfb7855bdebae",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x25e84b7754668afe71daf3d235c0f5f90155b0fc7912e904cb099c13a6b43dfe",
+    "record_type": "retail",
+    "operator": "retailer1"
+   },
+   "block_hash": "0xf5d6b904ace47263c39e840fa068f4fb7832261143c97aff92403d6844c07d78"
+  },
+  {
+   "index": 31,
+   "timestamp": 1789722511,
+   "prev_hash": "0xf5d6b904ace47263c39e840fa068f4fb7832261143c97aff92403d6844c07d78",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0xf4fc8bf1b0efb8eab155cf832e34260cc808fd16359d213af14d10f52c452cfd",
+    "record_type": "logistics",
+    "operator": "retailer1"
+   },
+   "block_hash": "0x70cfa6bed46821e6ab381acad1c3e616a9ec4fd11b267811f4aa781ba91579f8"
+  },
+  {
+   "index": 32,
+   "timestamp": 1789722512,
+   "prev_hash": "0x70cfa6bed46821e6ab381acad1c3e616a9ec4fd11b267811f4aa781ba91579f8",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0xa8c7991ad7d90cfd0bdfd3269e2debbf53ef00aa4b65799dd225cac775e2e06a",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x6bef333db5d5ab6a6f5ab5285dd3be4183aed726e5d4455d8c4d06848f92f4a5"
+  },
+  {
+   "index": 33,
+   "timestamp": 1789722512,
+   "prev_hash": "0x6bef333db5d5ab6a6f5ab5285dd3be4183aed726e5d4455d8c4d06848f92f4a5",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x676384f07c9f3c881a3a579004888ad9dbe6e618f23745e05e01b453744a2272",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xa64958bb296423db087892c3e29dd723485d0a4706326941fc2cec1905bd0a8b"
+  },
+  {
+   "index": 34,
+   "timestamp": 1789722512,
+   "prev_hash": "0xa64958bb296423db087892c3e29dd723485d0a4706326941fc2cec1905bd0a8b",
+   "data": {
+    "batch_id": "LOG:LOG202609181708506",
+    "data_hash": "0x3beeb02507a47bc25acdd7520a03c4cd22d02b0fc586ab9805a73ef074e3243d",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x7285b0349478f1bfd331a6c863699ab3c50b05f06d861752548a0e6a0cb2e811"
+  },
+  {
+   "index": 35,
+   "timestamp": 1789722512,
+   "prev_hash": "0x7285b0349478f1bfd331a6c863699ab3c50b05f06d861752548a0e6a0cb2e811",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x3beeb02507a47bc25acdd7520a03c4cd22d02b0fc586ab9805a73ef074e3243d",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x7ae4f568ce40f335fd71da36517c54e76b24c98af0db7d09fc1adc26298c0cb0"
+  },
+  {
+   "index": 36,
+   "timestamp": 1789722513,
+   "prev_hash": "0x7ae4f568ce40f335fd71da36517c54e76b24c98af0db7d09fc1adc26298c0cb0",
+   "data": {
+    "batch_id": "TRC20260918170827501",
+    "data_hash": "0x62ff3b1d5065e1bd8b7aa02670f6260b0c5873432c2d60bcf7c0c806febf80c4",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x1cfa06a90cc9fe93d9733f245abef0d7c75be36f7f18aeec0fb8cb20a5e47ca8"
+  },
+  {
+   "index": 37,
+   "timestamp": 1789722514,
+   "prev_hash": "0x1cfa06a90cc9fe93d9733f245abef0d7c75be36f7f18aeec0fb8cb20a5e47ca8",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0x24871b1d8e8a70e8bd1005f94a29a7b6747037692a70526008ed8415a56a20db",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x61193f30db0bfb7a31013076c21f249e519dc8eb74eda2c3ee61a36c6c4489ba"
+  },
+  {
+   "index": 38,
+   "timestamp": 1789722514,
+   "prev_hash": "0x61193f30db0bfb7a31013076c21f249e519dc8eb74eda2c3ee61a36c6c4489ba",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0xc6f8c9d07e3c91b5fe055bf49d4b3176ed749d64b8445ea927b2f0c48e6721ad",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x1dc1a008c85de28267b9c5fc4a386be24c173f13b647aba2c96b00a5d3e92d46"
+  },
+  {
+   "index": 39,
+   "timestamp": 1789722514,
+   "prev_hash": "0x1dc1a008c85de28267b9c5fc4a386be24c173f13b647aba2c96b00a5d3e92d46",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0x9e66fa156d80800236fe3cca96d3c9160463d1ae69660685a3a9c7ce4ecb2cb8",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xa363a26f991a4dba0313be84df62b00bc5ddca64396aff3fe0455687f0ca3cb3"
+  },
+  {
+   "index": 40,
+   "timestamp": 1789722514,
+   "prev_hash": "0xa363a26f991a4dba0313be84df62b00bc5ddca64396aff3fe0455687f0ca3cb3",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0xa66a72755b1ab0b9fd793f9317f515704399ed6da6e46f99783b1da8e90d15ca",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x19349681d94029ca43e18b7a4f31c824a2bec6ed28d026d711fa29fedde1f53e"
+  },
+  {
+   "index": 41,
+   "timestamp": 1789722514,
+   "prev_hash": "0x19349681d94029ca43e18b7a4f31c824a2bec6ed28d026d711fa29fedde1f53e",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0x4c85d82a249267064cde0e41dadb6f3da3bdffb681b0323db6ca34a44c2132bb",
+    "record_type": "retail",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xb1d5f5f5fa0c4d43d51fc65994440e0d0069e74e574eb6c43dd3fd545636dbaa"
+  },
+  {
+   "index": 42,
+   "timestamp": 1789722515,
+   "prev_hash": "0xb1d5f5f5fa0c4d43d51fc65994440e0d0069e74e574eb6c43dd3fd545636dbaa",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0x5294cd402abbc663149bfc2fdcb6c793295d87c6399376cb49b01532a66ffe67",
+    "record_type": "logistics",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xcc4b762698b07020b28aee4245619bbc46c05e75b089a98448fa783d94be26b6"
+  },
+  {
+   "index": 43,
+   "timestamp": 1789722515,
+   "prev_hash": "0xcc4b762698b07020b28aee4245619bbc46c05e75b089a98448fa783d94be26b6",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0x823f8f75ce02baded57f7e37627be3af063b0ec07bf51064d60a951930e77184",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x4099a6956d3ed6dc2470070b32de503ae3bc0af018844c0a1398504d2ff80138"
+  },
+  {
+   "index": 44,
+   "timestamp": 1789722516,
+   "prev_hash": "0x4099a6956d3ed6dc2470070b32de503ae3bc0af018844c0a1398504d2ff80138",
+   "data": {
+    "batch_id": "TRC20260918170834995",
+    "data_hash": "0x10cd72b3e7f5f3c85608d49519516a27be2aa30770933b9d1e6cd50edd86ffc1",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x91a1a5f07699ed4e52573da069ebe386f274ecfa7f28b8ba81a0edb6a477be2c"
+  },
+  {
+   "index": 45,
+   "timestamp": 1789722576,
+   "prev_hash": "0x91a1a5f07699ed4e52573da069ebe386f274ecfa7f28b8ba81a0edb6a477be2c",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x6abac04767a703d7decf0c11377a76d9c841bfcdcbc52fb8a890e553e8f8a0e4",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xe6a44f1357d3aba895a2cb2b5912f9b042712f6c3dfbb65bfd6e62598719790f"
+  },
+  {
+   "index": 46,
+   "timestamp": 1789722576,
+   "prev_hash": "0xe6a44f1357d3aba895a2cb2b5912f9b042712f6c3dfbb65bfd6e62598719790f",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x869554a6b600e79ee983cc3a769631d7e18c0491c6d59e56f99003846a832187",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x65d8d5c3a751938275f1d89081209d9acc928673b934b2000aff33da426d0320"
+  },
+  {
+   "index": 47,
+   "timestamp": 1789722576,
+   "prev_hash": "0x65d8d5c3a751938275f1d89081209d9acc928673b934b2000aff33da426d0320",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xd799ba85b32be79d8690d029e4052a648b5669424deee6a51201e63d9817247e",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x90213d5afbef418b5a2056ef0ad2f5bae9c6396646f688a382a8bb2555db57a9"
+  },
+  {
+   "index": 48,
+   "timestamp": 1789722576,
+   "prev_hash": "0x90213d5afbef418b5a2056ef0ad2f5bae9c6396646f688a382a8bb2555db57a9",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x137b637de9a63eb21afd6499721dce10d0272ffcda58fcfc90cfcdd7d8438df7",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x78ec1cc1311edba9d583564a9fae10ff518d7be6c2f133c1bc8d19354ff911f3"
+  },
+  {
+   "index": 49,
+   "timestamp": 1789722576,
+   "prev_hash": "0x78ec1cc1311edba9d583564a9fae10ff518d7be6c2f133c1bc8d19354ff911f3",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x79187a2388f77f7f9dedde3503b6d975ab3aef22d5422278c8151470e753b04f",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x129dfcc3cf83f256ba448ec923941294128c973e38d8e1d40851e30622017bbc"
+  },
+  {
+   "index": 50,
+   "timestamp": 1789722577,
+   "prev_hash": "0x129dfcc3cf83f256ba448ec923941294128c973e38d8e1d40851e30622017bbc",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x71c325b51a72bf3b9822338b17838c11805a77e045c2c7ae107600a9e6a09706",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x4e8ff90a5b6ad11165319d6aff4a1926aeed298690f59813ba227f954b6eb1ad"
+  },
+  {
+   "index": 51,
+   "timestamp": 1789722577,
+   "prev_hash": "0x4e8ff90a5b6ad11165319d6aff4a1926aeed298690f59813ba227f954b6eb1ad",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xb71d0096be37c94552b5a846d996b5c4aa6240facc385384d5a5e2e6e84e23fe",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xff785778be0fc671c54a8453f8a3339ea501ccd59905ee9bb7357c28dd4a8458"
+  },
+  {
+   "index": 52,
+   "timestamp": 1789722577,
+   "prev_hash": "0xff785778be0fc671c54a8453f8a3339ea501ccd59905ee9bb7357c28dd4a8458",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xf32a0a58e8d34cf9804da3dfe41331c95e75fa91b90946f6d2231991ea19de4b",
+    "record_type": "processing",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x9b8fde340cefba7f8da3cd5af82cbed38d19d361499fd8c542a4a69e6dbe256d"
+  },
+  {
+   "index": 53,
+   "timestamp": 1789722577,
+   "prev_hash": "0x9b8fde340cefba7f8da3cd5af82cbed38d19d361499fd8c542a4a69e6dbe256d",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x3561d3046554d184c201eb7fbf6a2c8e58c01b3bca8a159ce89ae35b8cc560f9",
+    "record_type": "retail",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xf52da9f02acb27ce7362aab57d5dcd5f252be0dbdcd7d6bf8cfbb39818452336"
+  },
+  {
+   "index": 54,
+   "timestamp": 1789722578,
+   "prev_hash": "0xf52da9f02acb27ce7362aab57d5dcd5f252be0dbdcd7d6bf8cfbb39818452336",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xce4ba14b9ee692f041bd75ee6394a5d1af1bd4595711b025f337087203ced5e5",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x1da07a5a032407f7ef070411bbf32e688b026c55559b0584ea9d7c757019be98"
+  },
+  {
+   "index": 55,
+   "timestamp": 1789722578,
+   "prev_hash": "0x1da07a5a032407f7ef070411bbf32e688b026c55559b0584ea9d7c757019be98",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xd924b93dc7785343366c88420dddce6b8b4e5827c4c79b72570a1583c0379366",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x533dd6389fbe9b642ecbcc5b891ec2a10c6a73d29ea150c8b9dba070ae3991dc"
+  },
+  {
+   "index": 56,
+   "timestamp": 1789722579,
+   "prev_hash": "0x533dd6389fbe9b642ecbcc5b891ec2a10c6a73d29ea150c8b9dba070ae3991dc",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x883dc61c57cae04a80e5a5ae17b636b00daa04bb1f6270911103d72f425a8b07",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x78641bf8945c6b3fe7ea084957c433729df0dac5f49a4e344dbff87644c41c3b"
+  },
+  {
+   "index": 57,
+   "timestamp": 1789722579,
+   "prev_hash": "0x78641bf8945c6b3fe7ea084957c433729df0dac5f49a4e344dbff87644c41c3b",
+   "data": {
+    "batch_id": "LOG:LOG202609181709913",
+    "data_hash": "0xe9633d73e8beff4cdde12a8901db36487b671f59b8dfd11474799995309b4570",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x6a5114d2154b5b3c9c98b4dcd0408130f8b146158667f7d01fda8318d3e576c6"
+  },
+  {
+   "index": 58,
+   "timestamp": 1789722579,
+   "prev_hash": "0x6a5114d2154b5b3c9c98b4dcd0408130f8b146158667f7d01fda8318d3e576c6",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xe9633d73e8beff4cdde12a8901db36487b671f59b8dfd11474799995309b4570",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xc1523ec040f7fb1aa64f4254ed739629dbe58f2d066b4a95285dff9338d41121"
+  },
+  {
+   "index": 59,
+   "timestamp": 1789722579,
+   "prev_hash": "0xc1523ec040f7fb1aa64f4254ed739629dbe58f2d066b4a95285dff9338d41121",
+   "data": {
+    "batch_id": "LOG:LOG202609181709913",
+    "data_hash": "0x9bea6f481b4e77110847f52e9f270eb9585091f580256609737e88c8361758be",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0xc3a8de1296dcfa1b841323909e0f94f856cc26461a44b628242427ac05fdc4b4"
+  },
+  {
+   "index": 60,
+   "timestamp": 1789722579,
+   "prev_hash": "0xc3a8de1296dcfa1b841323909e0f94f856cc26461a44b628242427ac05fdc4b4",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x9bea6f481b4e77110847f52e9f270eb9585091f580256609737e88c8361758be",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x7552edc3d131ad500f8c50c9a125eb761f880f5cbdee87cca15efb0dee052cec"
+  },
+  {
+   "index": 61,
+   "timestamp": 1789722579,
+   "prev_hash": "0x7552edc3d131ad500f8c50c9a125eb761f880f5cbdee87cca15efb0dee052cec",
+   "data": {
+    "batch_id": "LOG:LOG202609181709913",
+    "data_hash": "0xa3c0015745dd25b0b78bf09daa976fc8a8b56538f6cabc45023d278639ae5b09",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x37dd9beb70bc7589a60c09203eeda5e3ecc2e6939f626510935b6248efcfc153"
+  },
+  {
+   "index": 62,
+   "timestamp": 1789722579,
+   "prev_hash": "0x37dd9beb70bc7589a60c09203eeda5e3ecc2e6939f626510935b6248efcfc153",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xa3c0015745dd25b0b78bf09daa976fc8a8b56538f6cabc45023d278639ae5b09",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x204038f47adf00b48909b9ea5b933297a315156fade33cbd0dca23be1c00d12e"
+  },
+  {
+   "index": 63,
+   "timestamp": 1789722579,
+   "prev_hash": "0x204038f47adf00b48909b9ea5b933297a315156fade33cbd0dca23be1c00d12e",
+   "data": {
+    "batch_id": "LOG:LOG202609181709913",
+    "data_hash": "0xb0087c0ff2bc410acdd9d3c71d8efdd5c1b03108230ebb446bec55945df2b9c9",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x723e761a8b1aa2ce8ed0ac3f46d20d250f7fcc6b3f46019dbc9a22110981f416"
+  },
+  {
+   "index": 64,
+   "timestamp": 1789722579,
+   "prev_hash": "0x723e761a8b1aa2ce8ed0ac3f46d20d250f7fcc6b3f46019dbc9a22110981f416",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xb0087c0ff2bc410acdd9d3c71d8efdd5c1b03108230ebb446bec55945df2b9c9",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x1bb29e9d4e9d2536a2e15949d6e609b78b69cd5f3e88df845bbdd5163d10c730"
+  },
+  {
+   "index": 65,
+   "timestamp": 1789722580,
+   "prev_hash": "0x1bb29e9d4e9d2536a2e15949d6e609b78b69cd5f3e88df845bbdd5163d10c730",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x14fcd6d9c0cd807081b9a7d3e13aa1400980eb4e4bff92ec8acc9886533446e2",
+    "record_type": "sale",
+    "operator": "retailer1"
+   },
+   "block_hash": "0x54019feb25260ea6eb789e78446d3851ec03f1614d7f21d3cd618a7b3f3ddcd7"
+  },
+  {
+   "index": 66,
+   "timestamp": 1789722580,
+   "prev_hash": "0x54019feb25260ea6eb789e78446d3851ec03f1614d7f21d3cd618a7b3f3ddcd7",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xcbc87ed09629c3ac43aab26ecc2a08ce19ace90e26b30952c7926429c2a3c56f",
+    "record_type": "retail",
+    "operator": "retailer1"
+   },
+   "block_hash": "0xf9fec99b21f757f9b80d70e0955e2b9d2c0307406d4c04ccee29faf124f5ec55"
+  },
+  {
+   "index": 67,
+   "timestamp": 1789722581,
+   "prev_hash": "0xf9fec99b21f757f9b80d70e0955e2b9d2c0307406d4c04ccee29faf124f5ec55",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xed28684361470b70ca59aab97d696167ace5fbcc3933a28a6ad89b81d624c816",
+    "record_type": "logistics",
+    "operator": "retailer1"
+   },
+   "block_hash": "0xbd1f88ebdca0e90b3a428155312d7c58cd8b0f112b4c4131953333ea1f95777b"
+  },
+  {
+   "index": 68,
+   "timestamp": 1789722581,
+   "prev_hash": "0xbd1f88ebdca0e90b3a428155312d7c58cd8b0f112b4c4131953333ea1f95777b",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xe8080c871f3439b90ef15722fdf08b91a3d14bd8058923ec0fe57f87769b8b62",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x69a369eb48ee13879281b9b2bc5a69acd8a9c72f21b5f419f7e9d7b4e14c458c"
+  },
+  {
+   "index": 69,
+   "timestamp": 1789722581,
+   "prev_hash": "0x69a369eb48ee13879281b9b2bc5a69acd8a9c72f21b5f419f7e9d7b4e14c458c",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x22b13bd4550ad892323fb9767a8ea1fde0969c61d7de282a5089949a956bbf92",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x17f477a94bc33b91f77aab5d9cd0bb3f73e367f0797dd2ea74d857699dc3ad59"
+  },
+  {
+   "index": 70,
+   "timestamp": 1789722581,
+   "prev_hash": "0x17f477a94bc33b91f77aab5d9cd0bb3f73e367f0797dd2ea74d857699dc3ad59",
+   "data": {
+    "batch_id": "LOG:LOG202609181709568",
+    "data_hash": "0x8305117e48173e0ad65f8de138b438b0ddb110b528f098c457851e21dbb2247b",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0xa8a22806687d095b53166d86dde5468b02e0a66899478f7e85fd180b5e07684d"
+  },
+  {
+   "index": 71,
+   "timestamp": 1789722581,
+   "prev_hash": "0xa8a22806687d095b53166d86dde5468b02e0a66899478f7e85fd180b5e07684d",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x8305117e48173e0ad65f8de138b438b0ddb110b528f098c457851e21dbb2247b",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x6c82f8fee36139ac690978fed80ffda78455a981f542b15b086f7e70b32a1dcd"
+  },
+  {
+   "index": 72,
+   "timestamp": 1789722582,
+   "prev_hash": "0x6c82f8fee36139ac690978fed80ffda78455a981f542b15b086f7e70b32a1dcd",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xa581b7b95544a001e24daee1288557c31513d419ccf5f5258d9e6ebeae104a92",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0xd10312cc6e2bf92f9cf8d131e86f6b45b28b9eded4015f2a241b88b5a2f5b97b"
+  },
+  {
+   "index": 73,
+   "timestamp": 1789722583,
+   "prev_hash": "0xd10312cc6e2bf92f9cf8d131e86f6b45b28b9eded4015f2a241b88b5a2f5b97b",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0x24871b1d8e8a70e8bd1005f94a29a7b6747037692a70526008ed8415a56a20db",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x25a725902501a95a416d3748901aca321ca08d40ffa4aa80c55533b7a7b2b85f"
+  },
+  {
+   "index": 74,
+   "timestamp": 1789722583,
+   "prev_hash": "0x25a725902501a95a416d3748901aca321ca08d40ffa4aa80c55533b7a7b2b85f",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0xc6f8c9d07e3c91b5fe055bf49d4b3176ed749d64b8445ea927b2f0c48e6721ad",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x4641132a52cdaa3bb3b2884e3641da9497d2f4a0adf25d357a9caf0abf97352b"
+  },
+  {
+   "index": 75,
+   "timestamp": 1789722583,
+   "prev_hash": "0x4641132a52cdaa3bb3b2884e3641da9497d2f4a0adf25d357a9caf0abf97352b",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0x9e66fa156d80800236fe3cca96d3c9160463d1ae69660685a3a9c7ce4ecb2cb8",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x2985cf4b4ed142946a8b2cfdff7b81b0a8f9c7178cd0e1d63b436b4ca0d6f61e"
+  },
+  {
+   "index": 76,
+   "timestamp": 1789722583,
+   "prev_hash": "0x2985cf4b4ed142946a8b2cfdff7b81b0a8f9c7178cd0e1d63b436b4ca0d6f61e",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0xa66a72755b1ab0b9fd793f9317f515704399ed6da6e46f99783b1da8e90d15ca",
+    "record_type": "farming",
+    "operator": "farmer1"
+   },
+   "block_hash": "0x0c368135993bd68e3dd78a33eabc84032560d39626da9c674886a856ae1daafb"
+  },
+  {
+   "index": 77,
+   "timestamp": 1789722583,
+   "prev_hash": "0x0c368135993bd68e3dd78a33eabc84032560d39626da9c674886a856ae1daafb",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0xcc004e41a3dc83dc8117cae0a682099b8146f9d5262d2ea1a22f3335038abe46",
+    "record_type": "retail",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xcac1f9af49f138c7fc17c8b40756908364d021e697a95874656f894d81aa1263"
+  },
+  {
+   "index": 78,
+   "timestamp": 1789722584,
+   "prev_hash": "0xcac1f9af49f138c7fc17c8b40756908364d021e697a95874656f894d81aa1263",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0xe3e9ef114b3eb193760813cdd2832fc5f62e5ecb5b74bd22d54a149a0d3cab82",
+    "record_type": "logistics",
+    "operator": "farmer1"
+   },
+   "block_hash": "0xd62fb4c48613e7113b50fd0d35905dc995b3264e3fbfa337b4c899e5bf7ed1f1"
+  },
+  {
+   "index": 79,
+   "timestamp": 1789722584,
+   "prev_hash": "0xd62fb4c48613e7113b50fd0d35905dc995b3264e3fbfa337b4c899e5bf7ed1f1",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0xc66f321b1392c8c8b69e3e7618ddb8f65fae3978e348ac4fcb20f7fc84268b3d",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xd31a0a7d7541dc923f715017ab0c962d472070f07f3057b2920f56bfed8e889a"
+  },
+  {
+   "index": 80,
+   "timestamp": 1789722585,
+   "prev_hash": "0xd31a0a7d7541dc923f715017ab0c962d472070f07f3057b2920f56bfed8e889a",
+   "data": {
+    "batch_id": "TRC20260918170943657",
+    "data_hash": "0x4ea9dc54cd4cede702d257a24843aae31cfd3e883bf3b222851e884721540ea2",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x6b86f485140800167f90dbe7fdd209da96629c06ccc07c75825c9af28565cae2"
+  },
+  {
+   "index": 81,
+   "timestamp": 1789723883,
+   "prev_hash": "0x6b86f485140800167f90dbe7fdd209da96629c06ccc07c75825c9af28565cae2",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x82ff841b722cb1aa64751de7c5b32e88230e3f1a34f62bcf564f00139ffd3f5b",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x09d1af8cbe6399c369687ce0af44fdc5c4b19ff151ae1459ba5c49a46a07562f"
+  },
+  {
+   "index": 82,
+   "timestamp": 1789723885,
+   "prev_hash": "0x09d1af8cbe6399c369687ce0af44fdc5c4b19ff151ae1459ba5c49a46a07562f",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xa0c84b2ef22fd90cea1d5891766654e57edd7e800bd08ddc6581715e21bf030a",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x63da281d0b1bdc4f2195d504fab22968a3574093defdedf0c6c6ff2a56dd36c0"
+  },
+  {
+   "index": 83,
+   "timestamp": 1789723885,
+   "prev_hash": "0x63da281d0b1bdc4f2195d504fab22968a3574093defdedf0c6c6ff2a56dd36c0",
+   "data": {
+    "batch_id": "LOG:LOG202609181731874",
+    "data_hash": "0x9553b8d9aec80cd95f3d722d3b08244df32b18b129080699f51efcb68ce23c35",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x71041db6f78912f0c7ce1e928ef629c630f1548f45039e834c65848625f7906f"
+  },
+  {
+   "index": 84,
+   "timestamp": 1789723885,
+   "prev_hash": "0x71041db6f78912f0c7ce1e928ef629c630f1548f45039e834c65848625f7906f",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x9553b8d9aec80cd95f3d722d3b08244df32b18b129080699f51efcb68ce23c35",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x56aafd21c5e79c359d8a3d526a3a1697048635f096ff6070baca981b4adb40c7"
+  },
+  {
+   "index": 85,
+   "timestamp": 1789723885,
+   "prev_hash": "0x56aafd21c5e79c359d8a3d526a3a1697048635f096ff6070baca981b4adb40c7",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x1aafe755e527fbe37c56b0137c24c14bc77376d78bd4989293505a0e89147068",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x6990c9c3bad2d306978ea11bbf22dac29ec4469a699c158b76a2af9eb30a0fe8"
+  },
+  {
+   "index": 86,
+   "timestamp": 1789724084,
+   "prev_hash": "0x6990c9c3bad2d306978ea11bbf22dac29ec4469a699c158b76a2af9eb30a0fe8",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x0979e432f7083554021adcae7fffa934b3b49ebaffecb1ecbfa2af30bd79ae1e",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x0d6d77e2bbd41466cdab8539e4ee5942351677f9d10e6eb6f930159eaeb8ab96"
+  },
+  {
+   "index": 87,
+   "timestamp": 1789724085,
+   "prev_hash": "0x0d6d77e2bbd41466cdab8539e4ee5942351677f9d10e6eb6f930159eaeb8ab96",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xcb0d005736ad224660c70a57e04feccb2de2ec3e1f2f40a584a015be6e255c77",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x110492c9ea8fca1bc67fcab866385bd4f105bf270da224a96d47568f61c9fcb8"
+  },
+  {
+   "index": 88,
+   "timestamp": 1789724085,
+   "prev_hash": "0x110492c9ea8fca1bc67fcab866385bd4f105bf270da224a96d47568f61c9fcb8",
+   "data": {
+    "batch_id": "LOG:LOG202609181734306",
+    "data_hash": "0x777876e94295dad59fedd87ab6edfb4cf6c1a853514f4b0ea5a683ad38252c3a",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x328f1cbb2741f3d10a24127a32c17aa2a48b59a602c7d28cc93d1e18342ccd68"
+  },
+  {
+   "index": 89,
+   "timestamp": 1789724085,
+   "prev_hash": "0x328f1cbb2741f3d10a24127a32c17aa2a48b59a602c7d28cc93d1e18342ccd68",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x777876e94295dad59fedd87ab6edfb4cf6c1a853514f4b0ea5a683ad38252c3a",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xd640af28441f3dfa871dc53bd2c1c43dd2d3025ffae4bdfe2625ea511258cfec"
+  },
+  {
+   "index": 90,
+   "timestamp": 1789724086,
+   "prev_hash": "0xd640af28441f3dfa871dc53bd2c1c43dd2d3025ffae4bdfe2625ea511258cfec",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xe333d72e32d54d3d060b81c6c2ae495bc55ed74ddc80bfc58335f4deba53cd6a",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x5683f8a1f5412695ab5d71f73ac52063a6913ff4be6ac5cf42aabc2e993b3aa4"
+  },
+  {
+   "index": 91,
+   "timestamp": 1789724100,
+   "prev_hash": "0x5683f8a1f5412695ab5d71f73ac52063a6913ff4be6ac5cf42aabc2e993b3aa4",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x3d2c2018af1006afa2ac80b7c80ddb6f747fc31332f8b9f1cb121c0324c6e20a",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0xe25cc46edf83ec95446ec01ec61daebaa510573b8e5a67d117af46ca159478a1"
+  },
+  {
+   "index": 92,
+   "timestamp": 1789724101,
+   "prev_hash": "0xe25cc46edf83ec95446ec01ec61daebaa510573b8e5a67d117af46ca159478a1",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x665b31a0cbeb79dde56c7fa9fc89bbf6096c87e363a0b74c58c94b7fa7784df1",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x1c674a6ba4ce10721820b705aaa8ae6a75504ee411df6ecedeb4fcbec81826dc"
+  },
+  {
+   "index": 93,
+   "timestamp": 1789724101,
+   "prev_hash": "0x1c674a6ba4ce10721820b705aaa8ae6a75504ee411df6ecedeb4fcbec81826dc",
+   "data": {
+    "batch_id": "LOG:LOG202609181735663",
+    "data_hash": "0x0557cf60fcec916271d9fcd904363441f17375a34a565f20b51edabb37150e11",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x5898d73bec57066b5a5d53843a7c0f0d5307bbcd2c30146b50afd4f177f3ae9d"
+  },
+  {
+   "index": 94,
+   "timestamp": 1789724101,
+   "prev_hash": "0x5898d73bec57066b5a5d53843a7c0f0d5307bbcd2c30146b50afd4f177f3ae9d",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x0557cf60fcec916271d9fcd904363441f17375a34a565f20b51edabb37150e11",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x47bc188c4dd1aaca42b0981defe7b6b6fb03bfd0aeac49c7372218a5007248a7"
+  },
+  {
+   "index": 95,
+   "timestamp": 1789724102,
+   "prev_hash": "0x47bc188c4dd1aaca42b0981defe7b6b6fb03bfd0aeac49c7372218a5007248a7",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x97e81a0ce046a7f3a2e4db0e356d90a7898cca38cb463093cd819f212076eaf9",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x5da5816d92c7e312e9ee8cf2cb73b7d90556fbb4fc8c453a86c2a6cba10b1f7b"
+  },
+  {
+   "index": 96,
+   "timestamp": 1789724212,
+   "prev_hash": "0x5da5816d92c7e312e9ee8cf2cb73b7d90556fbb4fc8c453a86c2a6cba10b1f7b",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x92adb3ef54981cf49120f57bfec65ae1d21907c25ff2097493bd2c313bf83558",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x42706a986576362480b2d58b170639671d77d8f4a599f5d09edd7dd4ce7796d3"
+  },
+  {
+   "index": 97,
+   "timestamp": 1789724212,
+   "prev_hash": "0x42706a986576362480b2d58b170639671d77d8f4a599f5d09edd7dd4ce7796d3",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x4d1789b517c22e36b2bbd4a0edd3669b3d59803ae559ce96494e215d5f965f82",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x8ff94caa6323e01b375891e45422a83d7046afd4fb0b6e86b2ea6a2cb85804f4"
+  },
+  {
+   "index": 98,
+   "timestamp": 1789724213,
+   "prev_hash": "0x8ff94caa6323e01b375891e45422a83d7046afd4fb0b6e86b2ea6a2cb85804f4",
+   "data": {
+    "batch_id": "LOG:LOG202609181736626",
+    "data_hash": "0x3a629dab2655241b59fe29f6a1e7bd18c08d44efdc09d63d5d0114c7bba2548c",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x4aa73627da862b1c23a458f0299a656f28d3795f93ffd536993cf97391de66ac"
+  },
+  {
+   "index": 99,
+   "timestamp": 1789724213,
+   "prev_hash": "0x4aa73627da862b1c23a458f0299a656f28d3795f93ffd536993cf97391de66ac",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x3a629dab2655241b59fe29f6a1e7bd18c08d44efdc09d63d5d0114c7bba2548c",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xa63a0caa43fb2bd76c91f7909cfe0d9dc690ca231dd67b3255a3f67add4b53c7"
+  },
+  {
+   "index": 100,
+   "timestamp": 1789724213,
+   "prev_hash": "0xa63a0caa43fb2bd76c91f7909cfe0d9dc690ca231dd67b3255a3f67add4b53c7",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x330145aab088d72ce990299ff0f1e0f228206dca672a670644375457d990de97",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x43bcbe3ccec8bf17d8c098d164d3b75dae7d8b69d153ad3394bb5cb295f063f8"
+  },
+  {
+   "index": 101,
+   "timestamp": 1789724588,
+   "prev_hash": "0x43bcbe3ccec8bf17d8c098d164d3b75dae7d8b69d153ad3394bb5cb295f063f8",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x287b76829eb967a2c3b697b301c89c34f4e9173a46f8c1b01f0ba40ab776a1b5",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x2e447c2aac35246449c3cd36893caf7927956d8f2d29e7ffe09cea923eda257f"
+  },
+  {
+   "index": 102,
+   "timestamp": 1789724589,
+   "prev_hash": "0x2e447c2aac35246449c3cd36893caf7927956d8f2d29e7ffe09cea923eda257f",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xa3fb82765cf3e45093352501c9fa6952506b2138ccdea2f3e6d310e786cf6b36",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x72f93b290acea792694015d26446efaf3c5f7a0d3cd411c93fa9e56057743ee0"
+  },
+  {
+   "index": 103,
+   "timestamp": 1789724589,
+   "prev_hash": "0x72f93b290acea792694015d26446efaf3c5f7a0d3cd411c93fa9e56057743ee0",
+   "data": {
+    "batch_id": "LOG:LOG202609181743300",
+    "data_hash": "0x703f521cf61cf0bdada265e5e861107339fe17fd7b66c99e33e97e69ff87c4a1",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0xa8ee77b9d49a595736333e0faecb0dbbc6dc67d914ede301a416886628499417"
+  },
+  {
+   "index": 104,
+   "timestamp": 1789724589,
+   "prev_hash": "0xa8ee77b9d49a595736333e0faecb0dbbc6dc67d914ede301a416886628499417",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x703f521cf61cf0bdada265e5e861107339fe17fd7b66c99e33e97e69ff87c4a1",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x9c43f83a23193d214ba6ac47dd135232493760ef88fcbf0c246351ad36b83cbf"
+  },
+  {
+   "index": 105,
+   "timestamp": 1789724590,
+   "prev_hash": "0x9c43f83a23193d214ba6ac47dd135232493760ef88fcbf0c246351ad36b83cbf",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x4bafb485d7f0a60df37fe24f8d21541bc69651b656913d94f13cbb0ad4a56cd6",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0x4a692791196a07ced7ba3467567b2cf0b815d201d190fb1baaac541ea43881c1"
+  },
+  {
+   "index": 106,
+   "timestamp": 1789726458,
+   "prev_hash": "0x4a692791196a07ced7ba3467567b2cf0b815d201d190fb1baaac541ea43881c1",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xf7c325a9dfa76a290f3ee4b3d0648296b51f6910b1946e9ed15bc6544b729c9e",
+    "record_type": "logistics",
+    "operator": "contractor1"
+   },
+   "block_hash": "0x2348733faf2cd1827d861e422efd16c1c5966291be60077ee3326aed2e5e7db2"
+  },
+  {
+   "index": 107,
+   "timestamp": 1789726459,
+   "prev_hash": "0x2348733faf2cd1827d861e422efd16c1c5966291be60077ee3326aed2e5e7db2",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x1950deff915ed9e6168a517603babcaa0df1eca5eecba50dbeb550605c36ab75",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0x07cb4841dc52ad33b1cba4e93d6b223f95034a0e9b99a71af5db9008f7575bb6"
+  },
+  {
+   "index": 108,
+   "timestamp": 1789726459,
+   "prev_hash": "0x07cb4841dc52ad33b1cba4e93d6b223f95034a0e9b99a71af5db9008f7575bb6",
+   "data": {
+    "batch_id": "LOG:LOG202609181814336",
+    "data_hash": "0xd72a1eab257be580d6e480f2a67080f876215289d0320f7062daaad605b7b936",
+    "record_type": "logistics",
+    "operator": "logistics"
+   },
+   "block_hash": "0x27bccf1d2f7eb3f0a4b120f6877dd83087b1e60f69436fa1ae58f4e6a3390757"
+  },
+  {
+   "index": 109,
+   "timestamp": 1789726459,
+   "prev_hash": "0x27bccf1d2f7eb3f0a4b120f6877dd83087b1e60f69436fa1ae58f4e6a3390757",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0xd72a1eab257be580d6e480f2a67080f876215289d0320f7062daaad605b7b936",
+    "record_type": "logistics",
+    "operator": "logistics1"
+   },
+   "block_hash": "0xaa68e5105737bf94967363a3df123d376ddd680c8ffc58237b81cec5f5bccbef"
+  },
+  {
+   "index": 110,
+   "timestamp": 1789726459,
+   "prev_hash": "0xaa68e5105737bf94967363a3df123d376ddd680c8ffc58237b81cec5f5bccbef",
+   "data": {
+    "batch_id": "TRC20260918170936668",
+    "data_hash": "0x1e50fe779fce5bb20365bdd58e94e6bef708d288867193460cb12602ce26ac19",
+    "record_type": "sale",
+    "operator": "consumer1"
+   },
+   "block_hash": "0xcdd6824004b9cd9e94e0c610289a3cf1b91549e567da408be9e2269132544220"
+  }
+ ]
+}

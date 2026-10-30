@@ -1,0 +1,53 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+  <data>
+    <shape type="rect" topLeftX="64" topLeftY="52" width="5" height="26"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="78" topLeftY="50" width="800" height="34">
+      <content textType="title" fontSize="24" bold="true" color="rgb(25,25,25)"><p><span color="rgb(76,122,90)">六、</span>测试验证与总结</p></content>
+    </shape>
+    <line startX="64" startY="96" endX="896" endY="96"><border color="rgb(220,220,220)" width="1"/></line>
+
+    <shape type="rect" topLeftX="64" topLeftY="114" width="408" height="180"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(225,228,225)" width="1"/></shape>
+    <shape type="text" topLeftX="84" topLeftY="126" width="200" height="50"><content textType="title" fontSize="38" bold="true" color="rgb(76,122,90)"><p>27 <span fontSize="14" color="rgb(90,90,90)">项全过</span></p></content></shape>
+    <shape type="text" topLeftX="290" topLeftY="132" width="168" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(76,122,90)"><p>端到端测试</p></content></shape>
+    <shape type="text" topLeftX="84" topLeftY="190" width="368" height="96">
+      <content textType="body" fontSize="12" color="rgb(70,70,70)" lineSpacing="multiple:1.7">
+        <p>覆盖登录 / 购物车 / 下单 / 托管付款</p>
+        <p>覆盖发货 / 温度轨迹 / 确认收货</p>
+        <p>覆盖溯源查询 / 篡改与恢复</p>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="488" topLeftY="114" width="408" height="180"><fill><fillColor color="rgb(250,240,240)"/></fill><border color="rgb(200,80,80)" width="1"/></shape>
+    <shape type="text" topLeftX="508" topLeftY="128" width="368" height="24"><content textType="body" fontSize="15" bold="true" color="rgb(160,40,40)"><p>现场可演示的篡改检测</p></content></shape>
+    <shape type="text" topLeftX="508" topLeftY="160" width="368" height="120">
+      <content textType="body" fontSize="12" color="rgb(90,50,50)" lineSpacing="multiple:1.7">
+        <p>① 后台把冷链温度 -18℃ 改成 25℃</p>
+        <p>② 回溯源报告，立即标红"发现篡改"</p>
+        <p>③ 显示哪条记录、哪条哈希对不上</p>
+        <p>④ 恢复原文后重新校验，绿色通过</p>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="64" topLeftY="310" width="408" height="146"><fill><fillColor color="rgb(240,245,241)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="84" topLeftY="322" width="368" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(40,80,50)"><p>本项目完成</p></content></shape>
+    <shape type="text" topLeftX="84" topLeftY="352" width="368" height="96">
+      <content textType="body" fontSize="12" color="rgb(50,60,52)" lineSpacing="multiple:1.7">
+        <p>五端溯源全流程贯通 · 哈希上链防篡改</p>
+        <p>安心商城四方交易闭环 · 缓存与登录门禁</p>
+        <p>链上 <span bold="true">111</span> 区块 · 鲈鱼批次 <span bold="true">47</span> 条记录</p>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="488" topLeftY="310" width="408" height="146"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(225,228,225)" width="1"/></shape>
+    <shape type="text" topLeftX="508" topLeftY="322" width="368" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(76,122,90)"><p>后续工作</p></content></shape>
+    <shape type="text" topLeftX="508" topLeftY="352" width="368" height="96">
+      <content textType="body" fontSize="12" color="rgb(70,70,70)" lineSpacing="multiple:1.7">
+        <p>接入真实公链节点，替换本地链</p>
+        <p>Redis 集群支撑高并发扫码</p>
+        <p>移动端扫码与异常温度告警</p>
+      </content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>27 项测试全过，链上 111 个区块，鲈鱼批次 47 条记录。答辩现场可当场改一条温度，报告立刻红屏。谢谢老师。</p></content></note>
+</slide>

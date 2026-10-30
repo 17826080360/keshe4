@@ -1,0 +1,58 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgba(248,250,247,1)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="50" width="800" height="40">
+      <content textType="caption" fontSize="12" color="rgba(63,115,82,1)" letterSpacing="2"><p>PART 02 · 功能介绍</p></content>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="80" width="800" height="50">
+      <content textType="title" fontSize="30" bold="true" color="rgba(31,61,42,1)"><p>安心商城：交易 + 沟通 + 智能助手</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="160" width="250" height="280" presetHandlers="12">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="180" width="210" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(31,61,42,1)"><p>商城交易</p></content></shape>
+    <shape type="text" topLeftX="100" topLeftY="220" width="210" height="200">
+      <content textType="body" fontSize="12" color="rgba(60,70,60,1)" lineSpacing="multiple:1.7">
+        <ul>
+          <li><p>农户/物流/销售商均可上架商品</p></li>
+          <li><p>购物车、下单、支付、库存</p></li>
+          <li><p>农户 ↔ 销售商直接对接进货</p></li>
+          <li><p>订单状态、物流轨迹实时可见</p></li>
+          <li><p>钱包流水与订单记录</p></li>
+        </ul>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="355" topLeftY="160" width="250" height="280" presetHandlers="12">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="375" topLeftY="180" width="210" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(31,61,42,1)"><p>消息沟通</p></content></shape>
+    <shape type="text" topLeftX="375" topLeftY="220" width="210" height="200">
+      <content textType="body" fontSize="12" color="rgba(60,70,60,1)" lineSpacing="multiple:1.7">
+        <ul>
+          <li><p>用户与商家站内对话</p></li>
+          <li><p>消息中心统一收件</p></li>
+          <li><p>下单后商家自动发订单确认</p></li>
+          <li><p>可直接选择订单咨询问题</p></li>
+        </ul>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="630" topLeftY="160" width="250" height="280" presetHandlers="12">
+      <fill><fillColor color="linear-gradient(135deg,rgba(31,61,42,1) 0%,rgba(63,115,82,1) 100%)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="650" topLeftY="180" width="210" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(255,255,255,1)"><p>AI 智能助手</p></content></shape>
+    <shape type="text" topLeftX="650" topLeftY="220" width="210" height="200">
+      <content textType="body" fontSize="12" color="rgba(230,240,232,1)" lineSpacing="multiple:1.7">
+        <ul>
+          <li><p>右下角悬浮球，可拖动</p></li>
+          <li><p>基于 DeepSeek 大模型</p></li>
+          <li><p>Function Calling 查订单/查物流/查溯源</p></li>
+          <li><p>自然语言问答，新手友好</p></li>
+        </ul>
+      </content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>商城不只是买东西，还包含买卖双方沟通和 AI 助手，提升用户体验。</p></content></note>
+</slide>

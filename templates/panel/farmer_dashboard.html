@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}农户工作台{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+  <h1 style="font-size:22px;margin-bottom:14px">👨‍🌾 农户工作台</h1>
+
+  <div class="grid grid-3 mb-14">
+    <div class="stat-card"><div class="ic">🗂️</div><div class="num">{{ stats.batches }}</div><div class="lbl">我的溯源批次</div></div>
+    <div class="stat-card"><div class="ic">📜</div><div class="num">{{ stats.records }}</div><div class="lbl">已录入记录</div></div>
+    <div class="stat-card"><div class="ic">🏷️</div><div class="num">{{ stats.products }}</div><div class="lbl">平台在售商品</div></div>
+  </div>
+
+  <div class="grid grid-2 mb-14">
+    <a class="card" href="/batches" style="display:block;text-align:center;padding:26px">
+      <div style="font-size:34px">🗂️</div>
+      <b>批次管理</b>
+      <div class="small muted mt-8">创建批次、录入种苗/饲料/施肥/用药/捕捞记录并上链</div>
+    </a>
+    <a class="card" href="/products" style="display:block;text-align:center;padding:26px">
+      <div style="font-size:34px">🏷️</div>
+      <b>商品发布</b>
+      <div class="small muted mt-8">把溯源批次上架到安心商城售卖</div>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>📋 最近批次</h3>
+    {% for b in batches[:5] %}
+    <div class="flex between center" style="padding:10px 0;border-bottom:1px solid var(--line)">
+      <div>
+        <b>{{ b.product_name }}</b>
+        <span class="badge badge-green" style="font-family:Consolas,monospace">{{ b.batch_code }}</span>
+        <span class="small muted">{{ b.created_at }}</span>
+      </div>
+      <a class="btn btn-outline btn-sm" href="/batches/{{ b.id }}">管理</a>
+    </div>
+    {% else %}
+    <div class="empty">还没有批次，去「批次管理」创建第一个吧</div>
+    {% endfor %}
+  </div>
+
+  <div class="card mt-14">
+    <h3>🚚 销售去向与物流联系</h3>
+    <div class="small muted mb-8">你的货卖给了谁、由哪家物流公司运输、订单到了哪一步</div>
+    {% for s in sales %}
+    <div class="flex between center" style="padding:10px 0;border-bottom:1px solid var(--line)">
+      <div>
+        <b>👤 {{ s.buyer_name or '买家' }}</b>
+        <div class="small muted">📦 {{ s.items }}</div>
+        <div class="small muted">🚛 运方：{{ s.logistics_name or '未指派' }}</div>
+      </div>
+      <div class="text-right">
+        <div>¥{{ "%.2f"|format(s.total_amount) }} <span class="badge">{{ s.status }}</span></div>
+        <div class="small muted" style="font-family:Consolas,monospace">{{ s.order_no }}</div>
+      </div>
+    </div>
+    {% else %}
+    <div class="empty">还没有成交订单，上架商品后这里会显示买家和物流</div>
+    {% endfor %}
+  <div class="card mt-14">
+    <h3>🏪 可选销售商（直接对接）</h3>
+    <div class="small muted mb-8">这些是平台注册的销售商，上架商品后他们可直接向你采购；成交记录会出现在上方「销售去向」</div>
+    {% for r in retailers %}
+    <div class="flex between center" style="padding:8px 0;border-bottom:1px solid var(--line)">
+      <div>🏬 <b>{{ r.real_name }}</b>{% if r.company %}<span class="small muted"> · {{ r.company }}</span>{% endif %}</div>
+      <a class="btn btn-outline btn-sm" href="/products">去上架</a>
+    </div>
+    {% else %}
+    <div class="empty">平台暂无注册销售商</div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgba(248,250,247,1)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="50" width="800" height="40">
+      <content textType="caption" fontSize="12" color="rgba(63,115,82,1)" letterSpacing="2"><p>PART 02 · 功能介绍</p></content>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="80" width="800" height="50">
+      <content textType="title" fontSize="30" bold="true" color="rgba(31,61,42,1)"><p>一条鱼的旅程：全链路溯源流程</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="60" topLeftY="200" width="140" height="110" presetHandlers="12">
+      <fill><fillColor color="rgba(238,245,238,1)"/></fill><border color="rgba(63,115,82,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="60" topLeftY="215" width="140" height="30"><content textType="body" fontSize="15" bold="true" color="rgba(31,61,42,1)" textAlign="center"><p>种植/养殖</p></content></shape>
+    <shape type="text" topLeftX="60" topLeftY="248" width="140" height="60"><content textType="body" fontSize="11" color="rgba(80,90,80,1)" textAlign="center" lineSpacing="multiple:1.4"><p>用药、施肥、投放</p><p>采摘/捕捞记录</p></content></shape>
+
+    <line startX="200" startY="255" endX="240" endY="255"><border color="rgba(63,115,82,1)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="240" topLeftY="200" width="140" height="110" presetHandlers="12">
+      <fill><fillColor color="rgba(238,245,238,1)"/></fill><border color="rgba(63,115,82,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="240" topLeftY="215" width="140" height="30"><content textType="body" fontSize="15" bold="true" color="rgba(31,61,42,1)" textAlign="center"><p>批次入库</p></content></shape>
+    <shape type="text" topLeftX="240" topLeftY="248" width="140" height="60"><content textType="body" fontSize="11" color="rgba(80,90,80,1)" textAlign="center" lineSpacing="multiple:1.4"><p>生成批次号</p><p>哈希上链</p></content></shape>
+
+    <line startX="380" startY="255" endX="420" endY="255"><border color="rgba(63,115,82,1)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="420" topLeftY="200" width="140" height="110" presetHandlers="12">
+      <fill><fillColor color="rgba(238,245,238,1)"/></fill><border color="rgba(63,115,82,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="420" topLeftY="215" width="140" height="30"><content textType="body" fontSize="15" bold="true" color="rgba(31,61,42,1)" textAlign="center"><p>冷链物流</p></content></shape>
+    <shape type="text" topLeftX="420" topLeftY="248" width="140" height="60"><content textType="body" fontSize="11" color="rgba(80,90,80,1)" textAlign="center" lineSpacing="multiple:1.4"><p>温度上报</p><p>运输轨迹</p></content></shape>
+
+    <line startX="560" startY="255" endX="600" endY="255"><border color="rgba(63,115,82,1)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="600" topLeftY="200" width="140" height="110" presetHandlers="12">
+      <fill><fillColor color="rgba(238,245,238,1)"/></fill><border color="rgba(63,115,82,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="600" topLeftY="215" width="140" height="30"><content textType="body" fontSize="15" bold="true" color="rgba(31,61,42,1)" textAlign="center"><p>零售上架</p></content></shape>
+    <shape type="text" topLeftX="600" topLeftY="248" width="140" height="60"><content textType="body" fontSize="11" color="rgba(80,90,80,1)" textAlign="center" lineSpacing="multiple:1.4"><p>商品上架</p><p>销售记录</p></content></shape>
+
+    <line startX="740" startY="255" endX="780" endY="255"><border color="rgba(63,115,82,1)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="780" topLeftY="200" width="140" height="110" presetHandlers="12">
+      <fill><fillColor color="linear-gradient(135deg,rgba(31,61,42,1) 0%,rgba(63,115,82,1) 100%)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="780" topLeftY="215" width="140" height="30"><content textType="body" fontSize="15" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>消费者扫码</p></content></shape>
+    <shape type="text" topLeftX="780" topLeftY="248" width="140" height="60"><content textType="body" fontSize="11" color="rgba(230,240,232,1)" textAlign="center" lineSpacing="multiple:1.4"><p>查看全流程</p><p>链上校验</p></content></shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="360" width="800" height="100" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="375" width="760" height="30">
+      <content textType="body" fontSize="15" bold="true" color="rgba(31,61,42,1)"><p>演示主线</p></content>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="405" width="760" height="50">
+      <content textType="body" fontSize="13" color="rgba(60,70,60,1)" lineSpacing="multiple:1.5"><p>以一条「鲈鱼」为例：农户记录养殖 → 捕捞入库 → 冷链车 0-4℃ 运输 → 超市上架 → 消费者扫码看到每一步时间、地点、经手人和链上哈希；任一环节被篡改，校验立即失败。</p></content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>这一页是核心演示逻辑：五环节串成一条链，每个环节都产生记录并哈希上链。</p></content></note>
+</slide>

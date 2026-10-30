@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}扫码溯源 · 安心溯源商城{% endblock %}
+{% block content %}
+<div class="container" style="max-width:860px">
+  <div class="verify-banner verify-ok">🔒 溯源查询需登录 —— 登录后扫码 / 输入溯源码即可查看全链路，逐条链上验真</div>
+  <div class="card" style="text-align:center;padding:36px">
+    <h2 style="font-size:22px">📷 扫码 / 输入溯源码</h2>
+    <p class="muted mb-14">输入包装上的溯源码，查看该批次从种养到销售的全链路记录，并逐条核验链上哈希</p>
+
+    <form method="get" action="/trace" class="flex gap-8" style="max-width:520px;margin:0 auto" id="traceForm">
+      <input class="form-control" name="code" id="codeInput" placeholder="例如：TRC20260918170827501" style="font-family:Consolas,monospace;font-size:15px;text-align:center" required>
+      <button class="btn btn-lg">查 询</button>
+    </form>
+
+    <div class="mt-20" style="display:none" id="scannerBox">
+      <div id="reader" style="max-width:360px;margin:0 auto"></div>
+      <button class="btn btn-ghost btn-sm mt-8" type="button" onclick="stopScan()">关闭扫码</button>
+    </div>
+    <div class="mt-14">
+      <button class="btn btn-outline" type="button" id="scanBtn">📷 打开摄像头扫码（可选）</button>
+    </div>
+  </div>
+
+  <div class="card mt-20">
+    <h3>🔍 示例溯源码（点击直接查看溯源报告）</h3>
+    <div class="flex gap-12 wrap">
+      {% for b in samples %}
+      <a class="badge badge-green" href="/trace/{{ b.batch_code }}" style="font-size:13px;padding:6px 14px;font-family:Consolas,monospace">{{ b.batch_code }} · {{ b.product_name }} →</a>
+      {% endfor %}
+    </div>
+    <p class="muted small mt-8">👨‍🌾 农户/加工商可登录工作台创建批次，生成专属溯源码与二维码；消费者扫码溯源同样需先登录</p>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+document.getElementById('traceForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var code = document.getElementById('codeInput').value.trim();
+  if (code) window.location.href = '/trace/' + encodeURIComponent(code);
+});
+document.getElementById('scanBtn').addEventListener('click', function(){
+  var box = document.getElementById('scannerBox');
+  box.style.display = 'block';
+  if (window.Html5Qrcode) {
+    var scanner = new Html5Qrcode('reader');
+    scanner.start({ facingMode: 'environment' }, { fps: 8, qrbox: { width: 220, height: 220 } },
+      function(decoded){ window.location.href = '/trace/' + encodeURIComponent(decoded); },
+      function(){});
+    window.__scanner = scanner;
+  }
+});
+function stopScan(){
+  document.getElementById('scannerBox').style.display = 'none';
+  if (window.__scanner) { window.__scanner.stop().catch(function(){}); window.__scanner = null; }
+}
+</script>
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js" onerror="document.getElementById('scanBtn').style.display='none'"></script>
+{% endblock %}

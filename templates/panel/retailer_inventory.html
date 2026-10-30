@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}零售商库存{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+  <h1 style="font-size:22px;margin-bottom:14px">🏪 零售商 · 库存与转售</h1>
+  <div class="card mb-14">
+    <h3>📥 进货指南</h3>
+    <p class="small muted">在<a href="/mall"><b>安心商城</b></a>向农户/加工商批量进货 → 确认收货后商品进入下方库存 → 在库存上按自己的价格转售，买家依然可以扫码追溯到源头。</p>
+  </div>
+
+  <div class="card mb-14">
+    <h3>🚜 直接找农户 / 加工商进货</h3>
+    <div class="small muted mb-8">下面是农户与加工商正在出售的货源，点「去进货」直达商品下单</div>
+    {% for s in supplies %}
+    <div class="flex between center" style="padding:10px 0;border-bottom:1px solid var(--line)">
+      <div>
+        {{ s.image }} <b>{{ s.title }}</b>
+        <span class="badge">{{ role_names[s.seller_role] }}</span>
+        <div class="small muted">供货方：{{ s.seller_name }}{% if s.seller_company %}（{{ s.seller_company }}）{% endif %} · 库存 {{ s.stock }}{{ s.unit }} · ¥{{ s.price }}/{{ s.unit }}</div>
+      </div>
+      <a class="btn btn-sm" href="/mall/{{ s.id }}">去进货</a>
+    </div>
+    {% else %}
+    <div class="empty">暂无农户/加工商在售货源</div>
+    {% endfor %}
+  </div>
+
+  {% for i in inv %}
+  <div class="card mb-14">
+    <div class="flex between center wrap gap-8">
+      <div>
+        <b>{{ i.product_name }}</b>
+        <span class="badge badge-green" style="font-family:Consolas,monospace">{{ i.batch_code }}</span>
+        <span class="badge badge-blue">库存 {{ i.quantity }} {{ i.unit or i.b_unit or '件' }}</span>
+        {% if i.ref_price %}<span class="small muted">参考进价 ¥{{ i.ref_price }}/{{ i.b_unit }}</span>{% endif %}
+        <div class="small muted mt-8">产地：{{ i.origin or '—' }} · <a href="/trace/{{ i.batch_code }}">溯源报告 →</a></div>
+      </div>
+    </div>
+
+    <details class="mt-8">
+      <summary style="cursor:pointer;font-weight:600">🔄 转售上架（自定义售价）</summary>
+      <form method="post" action="/retailer/resale/{{ i.id }}" class="form-row mt-8">
+        <div class="form-group">
+          <label>转售标题</label>
+          <input class="form-control" name="title" required value="{{ i.product_name }}·超市直供">
+        </div>
+        <div class="form-group">
+          <label>售价（元/{{ i.unit or i.b_unit }}）</label>
+          <input class="form-control" type="number" name="price" step="0.01" min="0.01" required placeholder="如：45">
+        </div>
+        <div class="form-group">
+          <label>上架数量</label>
+          <input class="form-control" type="number" name="quantity" step="0.1" min="0.1" max="{{ i.quantity }}" required value="{{ i.quantity }}">
+        </div>
+        <div class="form-group">
+          <label>图标</label>
+          <input class="form-control" name="image" value="🥬">
+        </div>
+        <div class="form-group" style="grid-column:1/-1">
+          <label>描述</label>
+          <input class="form-control" name="description" value="源头可溯：批次 {{ i.batch_code }}，冷链到家，坏单包赔。">
+        </div>
+        <div class="form-group" style="grid-column:1/-1">
+          <button class="btn btn-lg">转售上架（自动关联溯源批次）</button>
+        </div>
+      </form>
+    </details>
+  </div>
+  {% else %}
+  <div class="card empty"><div class="big">📦</div>库存为空，先去商城进货吧<br><a class="btn mt-14" href="/mall">去进货</a></div>
+  {% endfor %}
+</div>
+{% endblock %}

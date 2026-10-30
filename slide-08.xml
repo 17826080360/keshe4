@@ -1,0 +1,43 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgba(248,250,247,1)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="50" width="800" height="40">
+      <content textType="caption" fontSize="12" color="rgba(63,115,82,1)" letterSpacing="2"><p>PART 05 · 总结</p></content>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="80" width="800" height="50">
+      <content textType="title" fontSize="30" bold="true" color="rgba(31,61,42,1)"><p>项目优势与不足</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="160" width="380" height="300" presetHandlers="12">
+      <fill><fillColor color="rgba(238,245,238,1)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="180" width="340" height="35"><content textType="body" fontSize="18" bold="true" color="rgba(31,61,42,1)"><p>项目优势</p></content></shape>
+    <shape type="text" topLeftX="100" topLeftY="225" width="340" height="220">
+      <content textType="body" fontSize="13" color="rgba(40,50,45,1)" lineSpacing="multiple:1.8">
+        <ul>
+          <li><p>溯源 + 商城一体化，业务闭环完整</p></li>
+          <li><p>哈希上链，篡改可被链上校验拒绝</p></li>
+          <li><p>多角色分工清晰，各端只做自己的事</p></li>
+          <li><p>站内消息 + AI 助手，体验友好</p></li>
+          <li><p>MySQL 落地，数据可查可演示</p></li>
+        </ul>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="500" topLeftY="160" width="380" height="300" presetHandlers="12">
+      <fill><fillColor color="rgba(252,240,238,1)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="520" topLeftY="180" width="340" height="35"><content textType="body" fontSize="18" bold="true" color="rgba(190,60,50,1)"><p>存在不足</p></content></shape>
+    <shape type="text" topLeftX="520" topLeftY="225" width="340" height="220">
+      <content textType="body" fontSize="13" color="rgba(80,50,45,1)" lineSpacing="multiple:1.8">
+        <ul>
+          <li><p>区块链目前是本地模拟，未接公链</p></li>
+          <li><p>缓存用内存实现，未上真实 Redis</p></li>
+          <li><p>支付为模拟流程，未接真实支付</p></li>
+          <li><p>界面较简洁，移动端适配待优化</p></li>
+        </ul>
+      </content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>客观讲优势和不足，体现真实思考，不要只说好话。</p></content></note>
+</slide>

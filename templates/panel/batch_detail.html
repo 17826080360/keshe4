@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}批次详情 · {{ b.batch_code }}{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+
+  <div class="flex between center wrap gap-8 mb-14">
+    <div>
+      <h1 style="font-size:22px">{{ b.product_name }} <span class="badge badge-green" style="font-family:Consolas,monospace">{{ b.batch_code }}</span></h1>
+      <div class="small muted">{{ b.origin or '' }} · 建档 {{ b.created_at }} · 当前环节 {{ b.current_stage }}</div>
+    </div>
+    <div class="flex gap-8">
+      <a class="btn btn-outline" href="/trace/{{ b.batch_code }}" target="_blank">查看溯源报告</a>
+      <a class="btn btn-outline" href="/qrcode/{{ b.batch_code }}" target="_blank">下载二维码</a>
+    </div>
+  </div>
+
+  {% if verify %}
+  {% if verify.ok %}
+  <div class="verify-banner verify-ok">✅ 本批次 {{ verify.results|length }} 条记录全部通过链上校验</div>
+  {% else %}
+  <div class="verify-banner verify-bad">⛔ 发现 {{ verify.bad_count }} 条记录校验失败（共 {{ verify.results|length }} 条）</div>
+  {% endif %}
+  {% endif %}
+
+  <div class="grid grid-2">
+    <!-- 记录列表 -->
+    <div class="card">
+      <h3>📜 溯源记录（{{ records|length }} 条）</h3>
+      {% for r in records %}
+      <div style="padding:9px 0;border-bottom:1px solid var(--line)">
+        <div class="flex between center">
+          <div><b>{{ r.record_name }}</b> <span class="small muted">{{ r.created_at }} · {{ r.operator_name }}</span></div>
+          {% if r.chain_status == 'onchain' %}<span class="badge badge-green">✅ 已上链</span>
+          {% elif r.chain_status == 'failed' %}<span class="badge badge-red">上链失败</span>
+          {% else %}<span class="badge badge-gray">待上链</span>{% endif %}
+        </div>
+        <div class="hash-cell mt-8">{{ r.data_hash }}</div>
+      </div>
+      {% else %}
+      <div class="empty">暂无记录</div>
+      {% endfor %}
+    </div>
+
+    <!-- 录入表单 -->
+    <div class="card">
+      <h3>✍️ 录入记录（哈希上链）</h3>
+      {% if forms %}
+      {% for rtype, rname, fields in forms %}
+      <details class="mb-8" {% if loop.first %}open{% endif %}>
+        <summary style="cursor:pointer;font-weight:600;padding:6px 0">{{ loop.index }}. {{ rname }}</summary>
+        <form method="post" action="/batches/{{ b.id }}/record" class="mt-8">
+          <input type="hidden" name="record_type" value="{{ rtype }}">
+          <input type="hidden" name="record_name" value="{{ rname }}">
+          {% for f in fields %}
+          <div class="form-group">
+            <label>{{ f }}</label>
+            <input class="form-control" name="f_{{ f }}" required placeholder="填写{{ f }}">
+          </div>
+          {% endfor %}
+          <button class="btn btn-block">写入记录并上链</button>
+        </form>
+      </details>
+      {% endfor %}
+      {% else %}
+      <div class="empty">当前角色没有可录入的记录类型</div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if my_products %}
+  <div class="card mt-20">
+    <h3>🏷️ 该批次在售商品</h3>
+    {% for p in my_products %}
+    <div class="flex between center" style="padding:8px 0;border-bottom:1px solid var(--line)">
+      <div>{{ p.image }} <b>{{ p.title }}</b> <span class="small muted">¥{{ p.price }}/{{ p.unit }} · 库存 {{ p.stock }}</span></div>
+      <a class="btn btn-outline btn-sm" href="/mall/{{ p.id }}">查看</a>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,62 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgba(248,250,247,1)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="50" width="800" height="40">
+      <content textType="caption" fontSize="12" color="rgba(63,115,82,1)" letterSpacing="2"><p>PART 01 · 需求分析</p></content>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="80" width="800" height="50">
+      <content textType="title" fontSize="30" bold="true" color="rgba(31,61,42,1)"><p>食品安全痛点 → 系统要解决什么</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="170" width="250" height="260" presetHandlers="12">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(220,228,220,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="190" width="210" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(190,60,50,1)"><p>现状痛点</p></content></shape>
+    <shape type="text" topLeftX="100" topLeftY="230" width="210" height="190">
+      <content textType="body" fontSize="13" color="rgba(60,70,60,1)" lineSpacing="multiple:1.6">
+        <ul>
+          <li><p>环节多、责任难追溯</p></li>
+          <li><p>纸质记录易篡改</p></li>
+          <li><p>消费者不信任产地</p></li>
+          <li><p>买卖双方信息不对称</p></li>
+        </ul>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="355" topLeftY="170" width="250" height="260" presetHandlers="12">
+      <fill><fillColor color="rgba(238,245,238,1)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="375" topLeftY="190" width="210" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(31,61,42,1)"><p>系统目标</p></content></shape>
+    <shape type="text" topLeftX="375" topLeftY="230" width="210" height="190">
+      <content textType="body" fontSize="13" color="rgba(40,50,45,1)" lineSpacing="multiple:1.6">
+        <ul>
+          <li><p>全链路数据上链防篡改</p></li>
+          <li><p>扫码即可查看全过程</p></li>
+          <li><p>农户-销售-物流线上对接</p></li>
+          <li><p>商城交易 + 溯源一体</p></li>
+        </ul>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="630" topLeftY="170" width="250" height="260" presetHandlers="12">
+      <fill><fillColor color="linear-gradient(135deg,rgba(31,61,42,1) 0%,rgba(63,115,82,1) 100%)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="650" topLeftY="190" width="210" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(255,255,255,1)"><p>目标用户</p></content></shape>
+    <shape type="text" topLeftX="650" topLeftY="230" width="210" height="190">
+      <content textType="body" fontSize="13" color="rgba(230,240,232,1)" lineSpacing="multiple:1.6">
+        <ul>
+          <li><p>农户 / 养殖端</p></li>
+          <li><p>销售商 / 零售商</p></li>
+          <li><p>物流公司</p></li>
+          <li><p>消费者</p></li>
+          <li><p>平台管理员</p></li>
+        </ul>
+      </content>
+    </shape>
+
+    <shape type="text" topLeftX="80" topLeftY="460" width="800" height="30">
+      <content textType="body" fontSize="13" color="rgba(90,100,90,1)"><p>核心诉求：买得安心、卖得安心 —— 每一个环节都有凭证，每一次扫码都能验证。</p></content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>讲清楚为什么做这个系统：食品安全事件频发，传统追溯纸质化、易篡改、消费者看不到。</p></content></note>
+</slide>

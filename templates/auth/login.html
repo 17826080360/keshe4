@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}登录 · 安心溯源商城{% endblock %}
+{% block content %}
+<style>
+  .auth-page{min-height:calc(100vh - 64px);display:flex;align-items:center;justify-content:center;
+    background:#eef1ec;padding:24px 12px}
+  .auth-box{width:860px;max-width:96vw;background:#fff;border-radius:14px;overflow:hidden;
+    box-shadow:0 20px 60px rgba(30,50,38,.18);display:flex;min-height:460px}
+  .auth-side{flex:1.1;background:#1f3d2a;color:#eef3ec;padding:40px 36px;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;justify-content:space-between}
+  .auth-side svg{position:absolute;inset:0;width:100%;height:100%;opacity:.14}
+  .auth-side .eyebrow{font-size:12px;letter-spacing:3px;color:#9fbda8;text-transform:uppercase}
+  .auth-side h1{font-size:30px;line-height:1.35;margin:14px 0 0;font-weight:600;letter-spacing:1px}
+  .auth-side .sub{font-size:13px;color:#b9cdb9;margin-top:16px;line-height:1.9}
+  .auth-side ul{list-style:none;padding:0;margin:0;font-size:13px;color:#d6e3d6;line-height:2.4}
+  .auth-side li::before{content:"—";margin-right:8px;color:#7fa389}
+  .auth-main{flex:1;padding:46px 44px}
+  .auth-main h3{margin:0 0 4px;font-size:20px;color:#1f3d2a;font-weight:600}
+  .auth-main .tip{font-size:13px;color:#9aa39b;margin-bottom:26px}
+  .auth-main label{font-size:13px;color:#556}
+  .auth-main .form-control{margin-top:6px;height:44px;border-radius:6px;border:1px solid #d9ded9}
+  .auth-main .btn-block{height:46px;border-radius:6px;font-size:14px;letter-spacing:4px;margin-top:12px;
+    background:#1f3d2a}
+  .auth-demo{margin-top:22px;font-size:12px;color:#8a938c;line-height:1.9;
+    border-top:1px solid #eef0ee;padding-top:14px}
+  .auth-foot{margin-top:14px;text-align:center;font-size:13px;color:#9aa39b}
+</style>
+<div class="auth-page">
+  <div class="auth-box">
+    <div class="auth-side">
+      <svg viewBox="0 0 400 460" preserveAspectRatio="none">
+        <path d="M0 380 C 80 340, 140 400, 220 360 S 360 300, 400 330" fill="none" stroke="#cfe0d0" stroke-width="1"/>
+        <path d="M0 410 C 80 370, 140 430, 220 390 S 360 330, 400 360" fill="none" stroke="#cfe0d0" stroke-width="1"/>
+        <path d="M0 350 C 80 310, 140 370, 220 330 S 360 270, 400 300" fill="none" stroke="#cfe0d0" stroke-width="1"/>
+        <path d="M0 440 C 80 400, 140 460, 220 420 S 360 360, 400 390" fill="none" stroke="#cfe0d0" stroke-width="1"/>
+      </svg>
+      <div>
+        <div class="eyebrow">Traceability · Marketplace</div>
+        <h1>从田间到餐桌<br>每一步都有据可查</h1>
+      </div>
+      <div>
+        <ul>
+          <li>关键环节哈希上链，不可篡改</li>
+          <li>冷链温度与运输轨迹实时上报</li>
+          <li>扫码即见完整溯源报告</li>
+        </ul>
+        <div class="sub">农户 · 物流 · 零售 · 消费者，在一个平台完成交易与追溯</div>
+      </div>
+    </div>
+    <div class="auth-main">
+      <h3>登录</h3>
+      <div class="tip">使用演示账号登录以体验各角色端</div>
+      <form method="post" action="/login">
+        {% if next_url %}<input type="hidden" name="next" value="{{ next_url }}">{% endif %}
+        <div class="form-group">
+          <label>账号</label>
+          <input class="form-control" name="username" required autofocus placeholder="用户名">
+        </div>
+        <div class="form-group">
+          <label>密码</label>
+          <input class="form-control" type="password" name="password" required placeholder="请输入密码">
+        </div>
+        <button class="btn btn-block btn-lg">登 录</button>
+      </form>
+      <div class="auth-demo">
+        演示账号（密码均为 123456）：farmer1 · retailer1 · logistics1 · consumer1 · admin
+      </div>
+      <div class="auth-foot">还没有账号？<a href="/register">注册新账号</a></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

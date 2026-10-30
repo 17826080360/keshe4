@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}管理后台{% endblock %}
+{% block content %}
+<div class="container">
+  <h1 style="font-size:22px;margin-bottom:14px">🛡️ 平台管理后台</h1>
+
+  <div class="grid grid-4 mb-14">
+    <div class="stat-card"><div class="ic">👥</div><div class="num">{{ stats.users }}</div><div class="lbl">注册用户</div></div>
+    <div class="stat-card"><div class="ic">🗂️</div><div class="num">{{ stats.batches }}</div><div class="lbl">溯源批次</div></div>
+    <div class="stat-card"><div class="ic">⛓️</div><div class="num">{{ stats.onchain }}/{{ stats.records }}</div><div class="lbl">链上记录/总记录</div></div>
+    <div class="stat-card"><div class="ic">📦</div><div class="num">{{ stats.orders }}</div><div class="lbl">订单数</div></div>
+    <div class="stat-card"><div class="ic">🏷️</div><div class="num">{{ stats.products }}</div><div class="lbl">在售商品</div></div>
+    <div class="stat-card"><div class="ic">💰</div><div class="num">¥{{ "%.0f"|format(stats.gmv) }}</div><div class="lbl">累计成交额</div></div>
+    <div class="stat-card"><div class="ic">🚚</div><div class="num">{{ stats.shipments }}</div><div class="lbl">运单数</div></div>
+    <div class="stat-card"><div class="ic">⛓️</div><div class="num">{{ chain.active }}</div><div class="lbl">当前链模式</div></div>
+  </div>
+
+  <div class="grid grid-2 mb-14">
+    <div class="card">
+      <h3>⛓️ 链上状态</h3>
+      <div class="kv-line"><span class="k">运行模式</span><span>{{ chain.active }}（{{ chain.chain_name() }}）</span></div>
+      <div class="kv-line"><span class="k">链区块数</span><span>{{ integrity.blocks }}</span></div>
+      <div class="kv-line"><span class="k">链完整性</span>
+        {% if integrity.ok %}<span class="badge badge-green">✅ 校验通过</span>
+        {% else %}<span class="badge badge-red">异常</span>{% endif %}
+      </div>
+      {% if integrity.problems %}
+      <div class="small" style="color:var(--red-600)">{{ integrity.problems|join('；') }}</div>
+      {% endif %}
+      <a class="btn btn-outline btn-sm mt-8" href="/admin/chain">查看全部上链记录</a>
+      <a class="btn btn-outline btn-sm mt-8" href="/admin/tamper">⚔️ 篡改演示工具</a>
+    </div>
+    <div class="card">
+      <h3>⚙️ 快捷操作</h3>
+      <div class="flex gap-8 wrap">
+        <a class="btn" href="/admin/users">用户管理</a>
+        <a class="btn" href="/admin/products">商品审核</a>
+        <a class="btn btn-outline" href="/admin/chain">链上记录</a>
+        <a class="btn btn-danger" href="/admin/tamper">篡改演示</a>
+      </div>
+      <form method="post" action="/admin/reset_demo" class="mt-14" onsubmit="return confirm('确定清空全部数据并重建演示数据？')">
+        <button class="btn btn-ghost">♻️ 一键重置演示数据</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📜 最近上链记录</h3>
+    <table class="table">
+      <tr><th>ID</th><th>批次</th><th>类型</th><th>记录名</th><th>录入人</th><th>指纹（前18位）</th><th>链上</th><th>时间</th></tr>
+      {% for r in recent_records %}
+      <tr>
+        <td class="num">{{ r.id }}</td>
+        <td><a href="/trace/{{ r.batch_code }}" style="font-family:Consolas,monospace">{{ r.batch_code }}</a></td>
+        <td><span class="badge badge-gray">{{ r.record_type }}</span></td>
+        <td>{{ r.record_name }}</td>
+        <td>{{ r.operator_name }}</td>
+        <td class="hash-cell">{{ r.data_hash[:18] }}…</td>
+        <td>{% if r.chain_status == 'onchain' %}<span class="badge badge-green">✅ 区块#{{ r.chain_block }}</span>
+            {% elif r.chain_status == 'failed' %}<span class="badge badge-red">失败</span>
+            {% else %}<span class="badge badge-gray">待上链</span>{% endif %}</td>
+        <td class="small muted">{{ r.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

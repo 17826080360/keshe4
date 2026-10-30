@@ -1,0 +1,42 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgba(248,250,247,1)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="50" width="800" height="40">
+      <content textType="caption" fontSize="12" color="rgba(63,115,82,1)" letterSpacing="2"><p>PART 04 · 系统架构与技术栈</p></content>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="80" width="800" height="50">
+      <content textType="title" fontSize="30" bold="true" color="rgba(31,61,42,1)"><p>分层架构：表现层 → 业务层 → 数据层</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="160" width="800" height="70" presetHandlers="10">
+      <fill><fillColor color="rgba(238,245,238,1)"/></fill><border color="rgba(63,115,82,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="172" width="200" height="25"><content textType="body" fontSize="14" bold="true" color="rgba(31,61,42,1)"><p>表现层</p></content></shape>
+    <shape type="text" topLeftX="100" topLeftY="198" width="760" height="25"><content textType="body" fontSize="12" color="rgba(60,70,60,1)"><p>HTML 模板 + 原生 JS ｜ 多角色登录/注册 ｜ 溯源查询页 ｜ 商城购物车 ｜ 订单消息 ｜ AI 悬浮球</p></content></shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="245" width="800" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(255,255,255,1)"/></fill><border color="rgba(63,115,82,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="257" width="200" height="25"><content textType="body" fontSize="14" bold="true" color="rgba(31,61,42,1)"><p>业务层（Flask 蓝图）</p></content></shape>
+    <shape type="text" topLeftX="100" topLeftY="285" width="760" height="45">
+      <content textType="body" fontSize="12" color="rgba(60,70,60,1)" lineSpacing="multiple:1.5"><p>auth 认证 ｜ trace 溯源 ｜ mall 商城交易 ｜ panel 各角色工作台 ｜ admin 后台 ｜ agent AI 助手（DeepSeek Function Calling）</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="350" width="380" height="110" presetHandlers="10">
+      <fill><fillColor color="linear-gradient(135deg,rgba(31,61,42,1) 0%,rgba(63,115,82,1) 100%)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="100" topLeftY="365" width="340" height="25"><content textType="body" fontSize="14" bold="true" color="rgba(255,255,255,1)"><p>数据层</p></content></shape>
+    <shape type="text" topLeftX="100" topLeftY="395" width="340" height="60">
+      <content textType="body" fontSize="12" color="rgba(230,240,232,1)" lineSpacing="multiple:1.5"><p>MySQL 8.0（明文业务库）</p><p>本地模拟链 / Ganache（哈希上链防篡改）</p><p>内存缓存（模拟 Redis 加速扫码查询）</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="500" topLeftY="350" width="380" height="110" presetHandlers="10">
+      <fill><fillColor color="rgba(255,248,225,1)"/></fill><border color="rgba(220,180,90,1)" width="1"/>
+    </shape>
+    <shape type="text" topLeftX="520" topLeftY="365" width="340" height="25"><content textType="body" fontSize="14" bold="true" color="rgba(150,100,30,1)"><p>技术栈</p></content></shape>
+    <shape type="text" topLeftX="520" topLeftY="395" width="340" height="60">
+      <content textType="body" fontSize="12" color="rgba(90,70,30,1)" lineSpacing="multiple:1.5"><p>后端：Python · Flask · PyMySQL</p><p>AI：DeepSeek deepseek-chat · Function Calling</p><p>前端：Jinja2 · HTML/CSS/JS</p></content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>强调分层清晰：业务数据在 MySQL，敏感哈希上链，缓存加速扫码；AI 用 DeepSeek 做函数调用。</p></content></note>
+</slide>

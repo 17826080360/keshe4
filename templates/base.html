@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}安心溯源商城 · 农产品溯源区块链系统{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<nav class="navbar">
+  <div class="inner">
+    <a class="brand" href="/"><span class="logo">🌾</span>安心溯源商城</a>
+    <span class="chain-badge">⛓️ {{ chain_name }} 链 · 哈希存证</span>
+    <div class="nav-links">
+      <a href="/">首页</a>
+      <a href="/mall">安心商城</a>
+      <a href="/trace">扫码溯源</a>
+      {% if g.user %}
+        {% if g.user.role in ['farmer','contractor','logistics','retailer','admin'] %}
+        <a href="/panel">工作台</a>
+        {% endif %}
+        {% if g.user.role in ['consumer','retailer'] %}
+        <a href="/orders">我的订单</a>
+        <a href="/cart">购物车</a>
+        {% endif %}
+        <a href="/messages">💬 消息</a>
+        {% if g.user.role == 'admin' %}<a href="/admin">管理后台</a>{% endif %}
+      {% endif %}
+    </div>
+    <div class="nav-right">
+      {% if g.user %}
+        <span class="nav-user">{{ ROLE_ICONS[g.user.role] }} {{ g.user.real_name }} <span class="muted" style="color:rgba(255,255,255,.65)">（{{ role_names[g.user.role] }}）</span></span>
+        <a class="btn-plain" href="/wallet">钱包 ¥{{ "%.2f"|format(g.user.balance) }}</a>
+        <a class="btn-plain" href="/logout">退出</a>
+      {% else %}
+        <a class="btn-plain" href="/login">登录</a>
+        <a class="btn-plain" href="/register">注册</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <div class="flash-wrap">
+    {% for cat, msg in messages %}
+    <div class="flash flash-{{ cat }}">{{ msg }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<button id="backBtn" onclick="history.back()" title="返回上一步"
+  style="position:fixed;left:24px;top:76px;z-index:9998;border:none;background:#e8ece8;color:#3a5a44;
+  width:46px;height:46px;border-radius:50%;font-size:20px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.18)">←</button>
+
+<div class="footer">
+  <b>农产品溯源区块链系统 · 安心商城</b> — 从田间到餐桌，每一环节哈希上链，防篡改可追溯
+  <br>技术栈：Solidity 智能合约（Ganache/本地模拟链） · Flask · SQLite 分层存储 · Redis/内存缓存 扫码优化
+</div>
+
+{% if g.user %}
+<div id="agent-fab" title="智能助手（可拖拽）"><span class="fab-ico">🤖</span><span class="fab-txt">智能助手</span></div>
+<div id="agent-panel">
+  <div class="agent-head"><span>🤖 溯源智能助手</span><span id="agent-close" class="agent-x">×</span></div>
+  <div class="agent-body" id="agent-body">
+    <div class="amsg ai">你好，问我某批次的溯源、冷链、订单，或怎么防篡改。</div>
+  </div>
+  <div class="agent-input">
+    <input id="agent-input" placeholder="例如：清江鲈鱼靠谱吗？" />
+    <button id="agent-send">发送</button>
+  </div>
+</div>
+<style>
+  #agent-fab{position:fixed;right:24px;bottom:24px;display:flex;align-items:center;gap:6px;
+    padding:0 16px;height:52px;border-radius:26px;background:#4c7a5a;color:#fff;
+    box-shadow:0 4px 16px rgba(0,0,0,.25);z-index:9999;cursor:grab;user-select:none;font-size:14px;}
+  #agent-fab:active{cursor:grabbing;}
+  .fab-ico{font-size:22px;}
+  .fab-txt{font-weight:600;}
+  #agent-panel{position:fixed;right:24px;bottom:92px;width:360px;height:520px;background:#fff;
+    border:1px solid #e0e4e0;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.2);
+    display:none;flex-direction:column;z-index:9999;overflow:hidden;}
+  #agent-panel.open{display:flex;}
+  .agent-head{background:#4c7a5a;color:#fff;padding:10px 14px;font-weight:600;display:flex;justify-content:space-between;align-items:center;}
+  .agent-x{cursor:pointer;font-size:20px;line-height:1;}
+  .agent-body{flex:1;overflow-y:auto;padding:12px;background:#f6f8f6;}
+  .amsg{max-width:86%;margin-bottom:10px;padding:8px 12px;border-radius:10px;font-size:13px;line-height:1.6;white-space:pre-wrap;}
+  .amsg.ai{background:#fff;border:1px solid #e2e8e2;}
+  .amsg.me{background:#4c7a5a;color:#fff;margin-left:auto;}
+  .amsg.trace{background:none;border:none;color:#999;font-size:11px;padding:2px 4px;}
+  .agent-input{display:flex;gap:8px;padding:10px;border-top:1px solid #eee;background:#fff;}
+  .agent-input input{flex:1;border:1px solid #ccc;border-radius:8px;padding:8px 10px;font-size:13px;}
+  .agent-input button{background:#4c7a5a;color:#fff;border:none;border-radius:8px;padding:0 16px;cursor:pointer;}
+</style>
+<script>
+(function(){
+  var fab=document.getElementById('agent-fab'), panel=document.getElementById('agent-panel'),
+      body=document.getElementById('agent-body'), input=document.getElementById('agent-input');
+  var dragging=false,moved=false,sx=0,sy=0;
+  fab.addEventListener('mousedown',function(e){
+    dragging=true;moved=false;
+    var r=fab.getBoundingClientRect();
+    fab.style.right='auto';fab.style.bottom='auto';
+    fab.style.left=r.left+'px';fab.style.top=r.top+'px';
+    sx=e.clientX;sy=e.clientY;e.preventDefault();
+  });
+  document.addEventListener('mousemove',function(e){
+    if(!dragging)return;
+    var dx=e.clientX-sx,dy=e.clientY-sy;
+    if(Math.abs(dx)>3||Math.abs(dy)>3)moved=true;
+    fab.style.left=(parseInt(fab.style.left)+dx)+'px';
+    fab.style.top=(parseInt(fab.style.top)+dy)+'px';
+    sx=e.clientX;sy=e.clientY;
+  });
+  document.addEventListener('mouseup',function(){
+    if(dragging&&!moved)panel.classList.toggle('open');
+    dragging=false;
+  });
+  document.getElementById('agent-close').onclick=function(){panel.classList.remove('open');};
+  function add(who,text,trace){
+    var d=document.createElement('div');d.className='amsg '+who;d.textContent=text;body.appendChild(d);
+    if(trace&&trace.length){var t=document.createElement('div');t.className='amsg trace';t.textContent='🔧 '+trace.join(' → ');body.appendChild(t);}
+    body.scrollTop=body.scrollHeight;
+  }
+  function ask(q){
+    add('me',q);
+    fetch('/assistant/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})})
+      .then(function(r){return r.json();})
+      .then(function(d){add('ai',d.reply||d.error||'',d.steps||[]);})
+      .catch(function(){add('ai','网络异常，请重试。');});
+  }
+  document.getElementById('agent-send').onclick=function(){var v=input.value.trim();if(v){ask(v);input.value='';}};
+  input.addEventListener('keydown',function(e){if(e.key==='Enter'){document.getElementById('agent-send').click();}});
+})();
+</script>
+{% endif %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}注册 · 安心溯源商城{% endblock %}
+{% block content %}
+<div class="container">
+<div class="auth-wrap">
+  <div class="card">
+    <h2 style="text-align:center">📝 注册新账号</h2>
+    <form method="post" action="/register">
+      <div class="form-group">
+        <label>用户名</label>
+        <input class="form-control" name="username" required>
+      </div>
+      <div class="form-group">
+        <label>密码</label>
+        <input class="form-control" type="password" name="password" required minlength="6">
+      </div>
+      <div class="form-group">
+        <label>真实姓名</label>
+        <input class="form-control" name="real_name" required>
+      </div>
+      <div class="form-group">
+        <label>身份角色</label>
+        <select class="form-control" name="role">
+          <option value="consumer">🛒 消费者（购物）</option>
+          <option value="farmer">👨‍🌾 农户（种养 + 卖货）</option>
+          <option value="logistics">🚚 物流公司（冷链配送）</option>
+          <option value="retailer">🏪 零售商（进货 + 转售）</option>
+        </select>
+        <div class="form-hint">农户 / 物流公司 / 零售商可在商城发布商品或服务</div>
+      </div>
+      <div class="form-group">
+        <label>联系电话</label>
+        <input class="form-control" name="phone" placeholder="选填">
+      </div>
+      <div class="form-group">
+        <label>单位/店铺名称</label>
+        <input class="form-control" name="company" placeholder="如：青山鱼塘">
+      </div>
+      <div class="form-group">
+        <label>收货地址</label>
+        <input class="form-control" name="address" placeholder="选填">
+      </div>
+      <button class="btn btn-block btn-lg">注 册（赠送 10000 元演示余额）</button>
+    </form>
+    <div class="mt-14" style="text-align:center"><span class="muted">已有账号？</span> <a href="/login">去登录</a></div>
+  </div>
+</div>
+</div>
+{% endblock %}

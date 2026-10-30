@@ -1,0 +1,57 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+  <data>
+    <shape type="rect" topLeftX="64" topLeftY="52" width="5" height="26"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="78" topLeftY="50" width="800" height="34">
+      <content textType="title" fontSize="24" bold="true" color="rgb(25,25,25)"><p><span color="rgb(76,122,90)">四、</span>核心机制：记录如何上链、如何校验</p></content>
+    </shape>
+    <line startX="64" startY="96" endX="896" endY="96"><border color="rgb(220,220,220)" width="1"/></line>
+
+    <shape type="text" topLeftX="64" topLeftY="116" width="400" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(40,80,50)"><p>写入时：每产生一条记录</p></content></shape>
+
+    <shape type="rect" topLeftX="64" topLeftY="148" width="150" height="60"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="64" topLeftY="166" width="150" height="24"><content textType="caption" fontSize="12" color="rgb(50,50,50)" textAlign="center"><p>原始记录</p></content></shape>
+    <line startX="214" startY="178" endX="232" endY="178"><border color="rgb(76,122,90)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="232" topLeftY="148" width="150" height="60"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="232" topLeftY="166" width="150" height="24"><content textType="caption" fontSize="12" color="rgb(50,50,50)" textAlign="center"><p>规范化 JSON</p></content></shape>
+    <line startX="382" startY="178" endX="400" endY="178"><border color="rgb(76,122,90)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="400" topLeftY="148" width="150" height="60"><fill><fillColor color="rgb(240,245,241)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="400" topLeftY="160" width="150" height="40"><content textType="caption" fontSize="12" color="rgb(40,80,50)" textAlign="center" lineSpacing="multiple:1.3"><p>计算 SHA-256</p><p>指纹</p></content></shape>
+    <line startX="550" startY="178" endX="568" endY="178"><border color="rgb(76,122,90)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="568" topLeftY="148" width="150" height="60"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="568" topLeftY="160" width="150" height="40"><content textType="caption" fontSize="12" color="rgb(50,50,50)" textAlign="center" lineSpacing="multiple:1.3"><p>带上前一块</p><p>哈希</p></content></shape>
+    <line startX="718" startY="178" endX="736" endY="178"><border color="rgb(76,122,90)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="736" topLeftY="148" width="160" height="60"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="736" topLeftY="166" width="160" height="24"><content textType="caption" fontSize="12" bold="true" color="rgb(255,255,255)" textAlign="center"><p>写入新区块</p></content></shape>
+
+    <shape type="text" topLeftX="64" topLeftY="252" width="400" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(40,80,50)"><p>读取时：消费者扫码</p></content></shape>
+
+    <shape type="rect" topLeftX="64" topLeftY="284" width="150" height="60"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(180,180,180)" width="1"/></shape>
+    <shape type="text" topLeftX="64" topLeftY="296" width="150" height="40"><content textType="caption" fontSize="12" color="rgb(50,50,50)" textAlign="center" lineSpacing="multiple:1.3"><p>从数据库</p><p>取出明文</p></content></shape>
+    <line startX="214" startY="314" endX="232" endY="314"><border color="rgb(120,120,120)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="232" topLeftY="284" width="150" height="60"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(180,180,180)" width="1"/></shape>
+    <shape type="text" topLeftX="232" topLeftY="296" width="150" height="40"><content textType="caption" fontSize="12" color="rgb(50,50,50)" textAlign="center" lineSpacing="multiple:1.3"><p>按同规则</p><p>现场重算</p></content></shape>
+    <line startX="382" startY="314" endX="400" endY="314"><border color="rgb(120,120,120)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="400" topLeftY="284" width="150" height="60"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(180,180,180)" width="1"/></shape>
+    <shape type="text" topLeftX="400" topLeftY="296" width="150" height="40"><content textType="caption" fontSize="12" color="rgb(50,50,50)" textAlign="center" lineSpacing="multiple:1.3"><p>与链上指纹</p><p>逐条比对</p></content></shape>
+    <line startX="550" startY="314" endX="568" endY="314"><border color="rgb(120,120,120)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="568" topLeftY="284" width="150" height="60"><fill><fillColor color="rgb(240,248,242)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="568" topLeftY="296" width="150" height="40"><content textType="caption" fontSize="12" bold="true" color="rgb(40,110,60)" textAlign="center" lineSpacing="multiple:1.3"><p>一致</p><p>校验通过</p></content></shape>
+    <line startX="718" startY="314" endX="736" endY="314"><border color="rgb(200,80,80)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="736" topLeftY="284" width="160" height="60"><fill><fillColor color="rgb(250,240,240)"/></fill><border color="rgb(200,80,80)" width="1"/></shape>
+    <shape type="text" topLeftX="736" topLeftY="296" width="160" height="40"><content textType="caption" fontSize="12" bold="true" color="rgb(160,40,40)" textAlign="center" lineSpacing="multiple:1.3"><p>不一致</p><p>标红"发现篡改"</p></content></shape>
+
+    <shape type="rect" topLeftX="64" topLeftY="384" width="832" height="80"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(225,228,225)" width="1"/></shape>
+    <shape type="text" topLeftX="84" topLeftY="398" width="792" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(40,40,40)"><p>分层存储为什么这样设计</p></content></shape>
+    <shape type="text" topLeftX="84" topLeftY="426" width="792" height="30"><content textType="body" fontSize="13" color="rgb(70,70,70)"><p>业务明文留在 SQLite，查询快、隐私好；链上只存 SHA-256 指纹，体积小、不可篡改。改任何一条，重算指纹都会对不上。</p></content></shape>
+  </data>
+  <note><content textType="body"><p>这一页用流程图讲机制，不放代码。写入走绿色，从原始记录到写入新区块；读取走灰色，最后分两支：通过是绿色，篡改是红色。</p></content></note>
+</slide>

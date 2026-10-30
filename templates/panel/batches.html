@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}批次管理{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+  <h1 style="font-size:22px;margin-bottom:14px">🗂️ 批次管理（溯源批次 · 三层数据模型）</h1>
+
+  {% if g.user.role in ['farmer','contractor'] %}
+  <div class="card mb-14">
+    <h3>➕ 创建新批次（生成溯源码）</h3>
+    <form method="post" action="/batches/create" class="form-row">
+      <div class="form-group">
+        <label>产品名称 *</label>
+        <input class="form-control" name="product_name" required placeholder="如：清江鲈鱼">
+      </div>
+      <div class="form-group">
+        <label>品类</label>
+        <input class="form-control" name="category" value="水产" placeholder="水产/蔬菜/水果/禽蛋">
+      </div>
+      <div class="form-group">
+        <label>产地</label>
+        <input class="form-control" name="origin" placeholder="如：宜昌清江水库">
+      </div>
+      <div class="form-group">
+        <label>数量</label>
+        <input class="form-control" type="number" name="quantity" value="100" step="0.1">
+      </div>
+      <div class="form-group">
+        <label>单位</label>
+        <input class="form-control" name="unit" value="kg">
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <label>描述</label>
+        <input class="form-control" name="description" placeholder="批次说明，将展示在溯源报告">
+      </div>
+      <div class="form-group" style="grid-column:1/-1">
+        <button class="btn">创建批次并生成溯源码</button>
+      </div>
+    </form>
+  </div>
+  {% endif %}
+
+  {% for b in rows %}
+  <div class="card mb-14">
+    <div class="flex between center wrap gap-8">
+      <div>
+        <b style="font-size:16px">{{ b.product_name }}</b>
+        <span class="badge badge-green" style="font-family:Consolas,monospace">{{ b.batch_code }}</span>
+        <span class="badge badge-blue">环节：{{ b.current_stage }}</span>
+        <span class="badge badge-gray">{{ b.quantity }} {{ b.unit }}</span>
+      </div>
+      <div class="flex gap-8">
+        <a class="btn btn-outline btn-sm" href="/qrcode/{{ b.batch_code }}" target="_blank">二维码</a>
+        <a class="btn btn-sm" href="/batches/{{ b.id }}">批次详情 / 录入记录</a>
+      </div>
+    </div>
+    <div class="small muted mt-8">{{ b.origin or '—' }} · 建档 {{ b.created_at }} · {% if b.description %}{{ b.description }}{% endif %}</div>
+  </div>
+  {% else %}
+  <div class="card empty"><div class="big">🗂️</div>暂无批次，{% if g.user.role in ['farmer','contractor'] %}使用上方表单创建第一个批次{% else %}请联系农户创建批次{% endif %}</div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+  <data>
+    <shape type="rect" topLeftX="64" topLeftY="52" width="5" height="26"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="78" topLeftY="50" width="800" height="34">
+      <content textType="title" fontSize="24" bold="true" color="rgb(25,25,25)"><p><span color="rgb(76,122,90)">一、</span>项目背景：传统溯源为什么不够用</p></content>
+    </shape>
+    <line startX="64" startY="96" endX="896" endY="96"><border color="rgb(220,220,220)" width="1"/></line>
+
+    <shape type="rect" topLeftX="64" topLeftY="118" width="380" height="232"><fill><fillColor color="rgb(247,247,247)"/></fill><border color="rgb(210,210,210)" width="1"/></shape>
+    <shape type="text" topLeftX="84" topLeftY="132" width="340" height="28"><content textType="body" fontSize="16" bold="true" color="rgb(90,90,90)"><p>传统纸质溯源</p></content></shape>
+    <shape type="text" topLeftX="84" topLeftY="170" width="340" height="170">
+      <content textType="body" fontSize="13" color="rgb(90,90,90)" lineSpacing="multiple:1.9">
+        <p>· 用药施肥靠手写台账</p>
+        <p>· 加工批次、冷链温度写在纸上</p>
+        <p>· 单据事后可涂改、不留痕</p>
+        <p>· 消费者看不到真实过程</p>
+        <p>· 出事各环节互相推诿</p>
+      </content>
+    </shape>
+
+    <shape type="ellipse" topLeftX="452" topLeftY="212" width="56" height="56"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="452" topLeftY="228" width="56" height="24"><content textType="body" fontSize="15" bold="true" color="rgb(255,255,255)" textAlign="center"><p>VS</p></content></shape>
+
+    <shape type="rect" topLeftX="520" topLeftY="118" width="376" height="232"><fill><fillColor color="rgb(240,245,241)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="540" topLeftY="132" width="336" height="28"><content textType="body" fontSize="16" bold="true" color="rgb(40,80,50)"><p>区块链溯源（本项目）</p></content></shape>
+    <shape type="text" topLeftX="540" topLeftY="170" width="336" height="170">
+      <content textType="body" fontSize="13" color="rgb(50,70,55)" lineSpacing="multiple:1.9">
+        <p>· 每步操作录入系统并算哈希</p>
+        <p>· 哈希指纹写入区块链存证</p>
+        <p>· 一旦写入，无法篡改、全程留痕</p>
+        <p>· 扫码即见从田间到餐桌全程</p>
+        <p>· 责任环节一目了然、可自证</p>
+      </content>
+    </shape>
+
+    <shape type="rect" topLeftX="64" topLeftY="372" width="832" height="86"><fill><fillColor color="rgb(246,248,246)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="84" topLeftY="386" width="792" height="24"><content textType="body" fontSize="14" bold="true" color="rgb(40,80,50)"><p>核心思路</p></content></shape>
+    <shape type="text" topLeftX="84" topLeftY="414" width="792" height="36"><content textType="body" fontSize="13" color="rgb(50,60,52)" lineSpacing="multiple:1.5"><p>业务数据明文存数据库便于查询，只把内容的 SHA-256 指纹上链；读取时重算比对，改一个字都会被当场发现。</p></content></shape>
+  </data>
+  <note><content textType="body"><p>左边是传统纸质溯源的问题，右边是本项目的做法，中间一个 VS。核心思路是明文存数据库、指纹上链，读取时重算比对。</p></content></note>
+</slide>

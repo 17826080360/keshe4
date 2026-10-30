@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% block title %}溯源报告 · {{ code }}{% endblock %}
+{% block content %}
+<div class="container" style="max-width:980px">
+
+  <!-- 总体校验横幅 -->
+  {% if data.ok %}
+  <div class="verify-banner verify-ok">✅ 链上校验通过 —— 该批次 {{ data.timeline|length }} 条记录全部与链上存证一致，数据未被篡改</div>
+  {% else %}
+  <div class="verify-banner verify-bad">⛔ 发现篡改 —— 部分记录与链上存证不一致，已被链上校验拒绝！</div>
+  {% endif %}
+
+  <!-- 批次信息 -->
+  <div class="card">
+    <div class="flex between center wrap gap-12">
+      <div style="flex:1">
+        <h2 style="margin-bottom:6px">{{ data.batch.product_name }}
+          <span class="badge badge-green">溯源码 {{ data.batch.batch_code }}</span>
+        </h2>
+        <div class="muted small mb-8">建档：{{ ROLE_ICONS[data.batch.owner_role] }} {{ data.batch.owner_role }} · {{ data.batch.created_at }}</div>
+        <div class="flex gap-12 wrap">
+          <div class="kv-line"><span class="k">品类</span><span>{{ data.batch.category or "—" }}</span></div>
+          <div class="kv-line"><span class="k">产地</span><span>{{ data.batch.origin or "—" }}</span></div>
+          <div class="kv-line"><span class="k">数量</span><span>{{ data.batch.quantity }} {{ data.batch.unit }}</span></div>
+          <div class="kv-line"><span class="k">当前环节</span><span>{{ data.batch.current_stage }}</span></div>
+        </div>
+        {% if data.batch.description %}<p class="muted small mt-8">{{ data.batch.description }}</p>{% endif %}
+      </div>
+      <div style="text-align:center">
+        <img src="/qrcode/{{ data.batch.batch_code }}" alt="溯源码二维码" style="width:130px;height:130px;border:1px solid var(--line);border-radius:8px">
+        <div class="small muted">扫码查看本报告</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 查询性能与链信息 -->
+  <div class="grid grid-2 mt-20">
+    <div class="card">
+      <h3>⚡ 扫码查询性能（高并发优化）</h3>
+      <div class="kv-line"><span class="k">本次查询</span>
+        {% if data.cache.hit %}<span class="badge badge-blue">缓存命中（{{ data.cache.backend }}）</span>
+        {% else %}<span class="badge badge-amber">缓存未命中 → 回源组装并写入缓存</span>{% endif %}
+      </div>
+      <div class="kv-line"><span class="k">缓存策略</span><span>溯源链路按溯源码缓存，TTL 300 秒</span></div>
+      <div class="kv-line"><span class="k">上链模式</span><span>{{ data.chain_name }} 链（哈希存证）</span></div>
+      <div class="mt-8"><a class="btn btn-ghost btn-sm" href="/trace/{{ code }}?fresh=1">🔄 强制刷新（绕过缓存重新校验）</a></div>
+    </div>
+    <div class="card">
+      <h3>⛓️ 区块链存证状态</h3>
+      <div class="kv-line"><span class="k">链上区块</span><span>{{ data.chain_integrity.blocks }} 个</span></div>
+      <div class="kv-line"><span class="k">链完整性</span>
+        {% if data.chain_integrity.ok %}<span class="badge badge-green">校验通过</span>
+        {% else %}<span class="badge badge-red">异常：{{ data.chain_integrity.problems }}</span>{% endif %}
+      </div>
+      <div class="kv-line"><span class="k">本批次记录</span><span>{{ data.timeline|length }} 条（{{ data.verified_count }} 条通过）</span></div>
+    </div>
+  </div>
+
+  <!-- 环节总览 -->
+  <div class="card mt-20">
+    <h3>🗂️ 批次 · 环节 · 记录 三层数据模型</h3>
+    <div>
+      {% for st in data.stages %}
+      <span class="stage-chip done">{{ st.stage_name or st.stage_type }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 全链路时间线 -->
+  <div class="card mt-20">
+    <h3>📜 全链路溯源时间线（{{ data.timeline|length }} 条记录）</h3>
+    <div class="timeline">
+      {% for item in data.timeline %}
+      <div class="tl-item {% if not item.verify.ok %}tampered{% endif %}">
+        <div class="tl-head">
+          <span style="font-size:18px">{{ item.icon }}</span>
+          <span class="tl-name">{{ item.name }}</span>
+          <span class="badge badge-gray">{{ item.stage_type }}</span>
+          <span class="tl-time">{{ item.display_time }} · {{ item.record.operator_name }}</span>
+          {% if item.verify.ok %}
+          <span class="badge badge-green">✅ 链上验证通过</span>
+          {% else %}
+          <span class="badge badge-red">⛔ 校验失败</span>
+          {% endif %}
+        </div>
+        <div class="tl-content">
+          {% for k, v in item.content.items() %}
+          <div class="kv"><span class="k">{{ k }}</span><span>{{ v }}</span></div>
+          {% endfor %}
+          <div class="tl-hash">
+            内容指纹：{{ item.record.data_hash }}<br>
+            链上交易：{{ item.record.chain_tx or "—" }} · 区块 #{{ item.record.chain_block or "—" }} · 状态 {{ item.record.chain_status }}
+            {% if not item.verify.ok %}
+            <br><b style="color:var(--red-600)">拒绝原因：{{ item.verify.issues|join('；') }}</b>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% else %}
+      <div class="empty">该批次暂无记录</div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- 关联商品与订单 -->
+  {% if data.products or data.orders %}
+  <div class="grid grid-2 mt-20">
+    {% if data.products %}
+    <div class="card">
+      <h3>🏷️ 该批次在售/曾售商品</h3>
+      {% for p in data.products %}
+      <div class="flex between center" style="padding:8px 0;border-bottom:1px solid var(--line)">
+        <div><b>{{ p.image }} {{ p.title }}</b><br><span class="small muted">{{ ROLE_ICONS[p.seller_role] }} {{ p.seller_role }} · ¥{{ p.price }}/{{ p.unit }}</span></div>
+        <a class="btn btn-outline btn-sm" href="/mall/{{ p.id }}">查看</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if data.orders %}
+    <div class="card">
+      <h3>💰 销售记录（商城成交）</h3>
+      {% for o in data.orders %}
+      <div class="small" style="padding:8px 0;border-bottom:1px solid var(--line)">
+        <b>{{ o.order_no }}</b> · ¥{{ o.total_amount }} · <span class="badge badge-blue">{{ o.status }}</span><br>
+        <span class="muted">{{ o.created_at }}</span>
+        {% if g.user %}<a class="small" href="/order/{{ o.id }}">查看订单 →</a>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="mt-20" style="text-align:center">
+    <a class="btn btn-outline" href="/trace">← 继续查询其他溯源码</a>
+  </div>
+</div>
+{% endblock %}

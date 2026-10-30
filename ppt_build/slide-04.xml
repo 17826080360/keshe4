@@ -1,0 +1,31 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgb(255,255,255)"/></fill></style>
+  <data>
+    <shape type="rect" topLeftX="64" topLeftY="52" width="5" height="26"><fill><fillColor color="rgb(76,122,90)"/></fill></shape>
+    <shape type="text" topLeftX="78" topLeftY="50" width="800" height="34">
+      <content textType="title" fontSize="24" bold="true" color="rgb(25,25,25)"><p><span color="rgb(76,122,90)">二、</span>系统总体设计：三层架构自上而下</p></content>
+    </shape>
+    <line startX="64" startY="96" endX="896" endY="96"><border color="rgb(220,220,220)" width="1"/></line>
+
+    <shape type="rect" topLeftX="120" topLeftY="116" width="720" height="76"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(225,228,225)" width="1"/></shape>
+    <shape type="text" topLeftX="140" topLeftY="128" width="680" height="24"><content textType="body" fontSize="15" bold="true" color="rgb(76,122,90)"><p>表现层</p></content></shape>
+    <shape type="text" topLeftX="140" topLeftY="158" width="680" height="26"><content textType="body" fontSize="13" color="rgb(60,60,60)"><p>农户 / 加工商 / 物流 / 零售商工作台　·　安心商城　·　扫码溯源报告</p></content></shape>
+    <line startX="480" startY="192" endX="480" endY="214"><border color="rgb(76,122,90)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="120" topLeftY="216" width="720" height="76"><fill><fillColor color="rgb(247,248,249)"/></fill><border color="rgb(225,228,225)" width="1"/></shape>
+    <shape type="text" topLeftX="140" topLeftY="228" width="680" height="24"><content textType="body" fontSize="15" bold="true" color="rgb(76,122,90)"><p>业务层</p></content></shape>
+    <shape type="text" topLeftX="140" topLeftY="258" width="680" height="26"><content textType="body" fontSize="13" color="rgb(60,60,60)"><p>user_service 用户钱包　trace_service 溯源校验　mall_service 交易物流　cache_service 缓存</p></content></shape>
+    <line startX="480" startY="292" endX="480" endY="314"><border color="rgb(76,122,90)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="rect" topLeftX="120" topLeftY="316" width="720" height="76"><fill><fillColor color="rgb(240,245,241)"/></fill><border color="rgb(76,122,90)" width="1"/></shape>
+    <shape type="text" topLeftX="140" topLeftY="328" width="680" height="24"><content textType="body" fontSize="15" bold="true" color="rgb(40,80,50)"><p>数据层（关键设计）</p></content></shape>
+    <shape type="text" topLeftX="140" topLeftY="358" width="680" height="26"><content textType="body" fontSize="13" color="rgb(50,60,52)"><p>SQLite 明文库　+　区块链只存 SHA-256 指纹　+　Redis / 内存缓存</p></content></shape>
+
+    <shape type="text" topLeftX="120" topLeftY="412" width="720" height="60">
+      <content textType="body" fontSize="13" color="rgb(90,90,90)" lineSpacing="multiple:1.7">
+        <p>为什么这样分：明文库保证查询快、隐私好；链上只存哈希指纹，写入和读取路径见后页。</p>
+      </content>
+    </shape>
+  </data>
+  <note><content textType="body"><p>三层自上而下，箭头表示请求流向。数据层是关键设计，明文和指纹分开存。</p></content></note>
+</slide>

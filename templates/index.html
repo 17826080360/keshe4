@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}首页 · 安心溯源商城{% endblock %}
+{% block content %}
+<div class="container">
+
+  <div class="hero">
+    <h1>🌾 从田间到餐桌，每一步都可追溯</h1>
+    <p>农产品溯源区块链系统 + 安心商城：农户、加工商、物流公司、零售商同台交易；
+       每一批次的生产、加工、冷链、销售记录哈希上链防篡改，扫码即可查验全过程。
+       买得安心，卖得安心。</p>
+    <div class="stats">
+      <div><div class="num">{{ stats.batches }}</div><div class="lbl">溯源批次</div></div>
+      <div><div class="num">{{ stats.records }}</div><div class="lbl">链上记录</div></div>
+      <div><div class="num">{{ stats.products }}</div><div class="lbl">在售商品</div></div>
+      <div><div class="num">{{ stats.orders }}</div><div class="lbl">成交订单</div></div>
+    </div>
+    <div class="actions">
+      <a class="btn btn-lg btn-hero" href="/mall">🛒 进入安心商城</a>
+      <a class="btn btn-lg btn-hero-ghost" href="/trace">📷 扫码溯源</a>
+      {% if not g.user %}<a class="btn btn-lg btn-hero-ghost" href="/login">登录体验</a>{% endif %}
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="feature"><div class="icon">👨‍🌾</div><div class="t">种植/养殖端</div><div class="d">农户录入种苗、施肥、用药、采摘，一键上链</div></div>
+    <div class="feature"><div class="icon">🏭</div><div class="t">加工端</div><div class="d">批次入库、加工记录、包装信息全程留痕</div></div>
+    <div class="feature"><div class="icon">🚚</div><div class="t">物流端</div><div class="d">冷链温度实时上报、运输轨迹可查可溯</div></div>
+    <div class="feature"><div class="icon">🛒</div><div class="t">零售与消费</div><div class="d">扫码查看全链路，篡改会被链上校验拒绝</div></div>
+  </div>
+
+  <div class="section-title">安心商城 · 热卖溯源商品</div>
+  <div class="product-grid">
+    {% for p in products %}
+    <div class="product-card">
+      <a href="/mall/{{ p.id }}"><div class="thumb">{{ p.image }}</div></a>
+      <div class="body">
+        <a href="/mall/{{ p.id }}"><div class="title">{{ p.title }}</div></a>
+        <div class="seller">{{ ROLE_ICONS[p.seller_role] }} {{ p.seller_name }}{% if p.seller_company %} · {{ p.seller_company }}{% endif %}</div>
+        <div class="meta">
+          <div class="price">¥{{ p.price }} <small>/{{ p.unit }}</small></div>
+          {% if p.batch_id %}<span class="trace-tag">🔗 可溯源</span>{% else %}<span class="badge badge-gray">物流服务</span>{% endif %}
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="empty" style="grid-column:1/-1"><div class="big">🥬</div>暂无在售商品</div>
+    {% endfor %}
+  </div>
+
+  <div class="section-title">平台信任机制</div>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>⛓️ 哈希上链防篡改</h3>
+      <p class="muted">业务数据明文存数据库，指纹（SHA-256）写入区块链。任何环节数据被改动，重算哈希即与链上存证不一致，校验当场拒绝。</p>
+    </div>
+    <div class="card">
+      <h3>🤝 资金托管结算</h3>
+      <p class="muted">买家付款进入平台托管，买家确认收货后货款才结算给卖家（扣除 2% 平台服务费），杜绝"付了钱收不到货"。</p>
+    </div>
+    <div class="card">
+      <h3>🚚 物流全程上链</h3>
+      <p class="muted">冷链温度、运输轨迹、发货签收等物流事件同步写入溯源链，买家可查卖家可证，责任清晰可追溯。</p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

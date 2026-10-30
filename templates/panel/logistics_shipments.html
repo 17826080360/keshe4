@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}物流运单{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+  <div class="flex between center wrap gap-8 mb-14">
+    <h1 style="font-size:22px">🚚 物流运单管理</h1>
+    <form method="get">
+      <select class="form-control" name="status" onchange="this.form.submit()">
+        <option value="全部">全部状态</option>
+        <option value="pending" {% if status=='pending' %}selected{% endif %}>待揽收</option>
+        <option value="picked_up" {% if status=='picked_up' %}selected{% endif %}>已揽收</option>
+        <option value="in_transit" {% if status=='in_transit' %}selected{% endif %}>运输中</option>
+        <option value="delivered" {% if status=='delivered' %}selected{% endif %}>已送达</option>
+      </select>
+    </form>
+  </div>
+
+  {% for s in rows %}
+  <div class="card mb-14">
+    <div class="flex between center wrap gap-8">
+      <div>
+        <b>运单 {{ s.tracking_no }}</b>
+        <span class="badge badge-blue">订单 {{ s.order_no }}</span>
+        {% if s.status == 'pending' %}<span class="badge badge-amber">待揽收</span>
+        {% elif s.status == 'picked_up' %}<span class="badge badge-blue">已揽收</span>
+        {% elif s.status == 'in_transit' %}<span class="badge badge-blue">运输中</span>
+        {% else %}<span class="badge badge-green">已送达</span>{% endif %}
+        <span class="badge badge-green">❄️ 冷链</span>
+      </div>
+      <a class="btn btn-sm" href="/logistics/shipment/{{ s.id }}">进入运单（温度/轨迹上报）</a>
+    </div>
+    <div class="small muted mt-8">收货人：{{ s.buyer_name }} · {{ s.shipping_address }}</div>
+  </div>
+  {% else %}
+  <div class="card empty"><div class="big">🚚</div>暂无运单</div>
+  {% endfor %}
+</div>
+{% endblock %}

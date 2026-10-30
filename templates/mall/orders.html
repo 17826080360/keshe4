@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}我的订单{% endblock %}
+{% block content %}
+<div class="container" style="max-width:960px">
+  <h1 style="font-size:22px;margin-bottom:14px">📦 我的订单</h1>
+
+  <div class="flex gap-8 mb-14 wrap">
+    <a class="btn {% if side=='buy' %}btn{% else %}btn-ghost{% endif %}" href="/orders?side=buy">🛒 我买的</a>
+    <a class="btn {% if side=='sell' %}btn{% else %}btn-ghost{% endif %}" href="/orders?side=sell">💰 我卖的</a>
+    <div style="flex:1"></div>
+    <form method="get">
+      <input type="hidden" name="side" value="{{ side }}">
+      <select class="form-control" name="status" onchange="this.form.submit()">
+        <option value="全部">全部状态</option>
+        <option value="pending_payment" {% if status=='pending_payment' %}selected{% endif %}>待付款</option>
+        <option value="paid" {% if status=='paid' %}selected{% endif %}>已付款待发货</option>
+        <option value="shipped" {% if status=='shipped' %}selected{% endif %}>运输中</option>
+        <option value="completed" {% if status=='completed' %}selected{% endif %}>已完成</option>
+        <option value="cancelled" {% if status=='cancelled' %}selected{% endif %}>已取消</option>
+      </select>
+    </form>
+  </div>
+
+  {% for o in rows %}
+  <div class="card mb-14">
+    <div class="flex between center wrap gap-8" style="border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px">
+      <div>
+        <b>{{ o.order_no }}</b>
+        <span class="small muted"> · {{ o.created_at }}</span>
+      </div>
+      <div class="flex gap-8 center">
+        {% if o.status == 'pending_payment' %}<span class="badge badge-amber">⏳ 待付款</span>
+        {% elif o.status == 'paid' %}<span class="badge badge-blue">✅ 已付款待发货</span>
+        {% elif o.status == 'shipped' %}<span class="badge badge-blue">🚚 运输中</span>
+        {% elif o.status == 'completed' %}<span class="badge badge-green">🎉 已完成</span>
+        {% else %}<span class="badge badge-gray">已取消</span>{% endif %}
+        <span class="amount">¥{{ "%.2f"|format(o.total_amount) }}</span>
+      </div>
+    </div>
+    <div class="flex between center wrap gap-8">
+      <div class="small">
+        {% if side == 'buy' %}卖家：<b>{{ o.other_name }}</b>
+        {% else %}买家：<b>{{ o.other_name }}</b>{% endif %}
+        {% if o.order_type == 'service' %} · <span class="badge badge-gray">物流服务</span>{% endif %}
+      </div>
+      <a class="btn btn-outline btn-sm" href="/order/{{ o.id }}">查看详情</a>
+    </div>
+  </div>
+  {% else %}
+  <div class="card empty"><div class="big">📦</div>暂无订单</div>
+  {% endfor %}
+</div>
+{% endblock %}

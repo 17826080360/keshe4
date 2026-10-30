@@ -1,0 +1,65 @@
+<slide xmlns="https://www.larkoffice.com/sml/2.0">
+  <style><fill><fillColor color="rgba(248,250,247,1)"/></fill></style>
+  <data>
+    <shape type="text" topLeftX="80" topLeftY="50" width="800" height="40">
+      <content textType="caption" fontSize="12" color="rgba(63,115,82,1)" letterSpacing="2"><p>PART 03 · 数据库设计</p></content>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="80" width="800" height="50">
+      <content textType="title" fontSize="30" bold="true" color="rgba(31,61,42,1)"><p>批次 → 环节 → 记录：三层溯源模型</p></content>
+    </shape>
+
+    <shape type="rect" topLeftX="80" topLeftY="170" width="220" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(31,61,42,1)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="80" topLeftY="185" width="220" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>批次 Batches</p></content></shape>
+    <shape type="text" topLeftX="80" topLeftY="218" width="220" height="30"><content textType="caption" fontSize="11" color="rgba(200,220,205,1)" textAlign="center"><p>一个产品批次（如 TRC2026...）</p></content></shape>
+
+    <shape type="rect" topLeftX="370" topLeftY="170" width="220" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(63,115,82,1)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="370" topLeftY="185" width="220" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>环节 Stages</p></content></shape>
+    <shape type="text" topLeftX="370" topLeftY="218" width="220" height="30"><content textType="caption" fontSize="11" color="rgba(220,235,222,1)" textAlign="center"><p>种植 / 入库 / 物流 / 零售</p></content></shape>
+
+    <shape type="rect" topLeftX="660" topLeftY="170" width="220" height="90" presetHandlers="10">
+      <fill><fillColor color="rgba(120,165,135,1)"/></fill>
+    </shape>
+    <shape type="text" topLeftX="660" topLeftY="185" width="220" height="30"><content textType="body" fontSize="16" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>记录 Records</p></content></shape>
+    <shape type="text" topLeftX="660" topLeftY="218" width="220" height="30"><content textType="caption" fontSize="11" color="rgba(235,245,238,1)" textAlign="center"><p>具体操作人、时间、数据、哈希</p></content></shape>
+
+    <line startX="300" startY="215" endX="370" endY="215"><border color="rgba(63,115,82,1)" width="2"/><endArrow type="arrow"/></line>
+    <line startX="590" startY="215" endX="660" endY="215"><border color="rgba(63,115,82,1)" width="2"/><endArrow type="arrow"/></line>
+
+    <shape type="text" topLeftX="80" topLeftY="290" width="800" height="30">
+      <content textType="body" fontSize="14" bold="true" color="rgba(31,61,42,1)"><p>MySQL 共 15 张核心表</p></content>
+    </shape>
+
+    <table topLeftX="80" topLeftY="325" width="800" height="140">
+      <colgroup><col width="200"/><col width="200"/><col width="200"/><col width="200"/></colgroup>
+      <tr height="32">
+        <td><fill><fillColor color="rgba(31,61,42,1)"/></fill><content textType="body" fontSize="12" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>业务域</p></content></td>
+        <td><fill><fillColor color="rgba(31,61,42,1)"/></fill><content textType="body" fontSize="12" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>核心表</p></content></td>
+        <td><fill><fillColor color="rgba(31,61,42,1)"/></fill><content textType="body" fontSize="12" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>业务域</p></content></td>
+        <td><fill><fillColor color="rgba(31,61,42,1)"/></fill><content textType="body" fontSize="12" bold="true" color="rgba(255,255,255,1)" textAlign="center"><p>核心表</p></content></td>
+      </tr>
+      <tr height="27">
+        <td><content textType="body" fontSize="11" textAlign="center"><p>用户/角色</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>users</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>溯源</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>batches / stages / records</p></content></td>
+      </tr>
+      <tr height="27">
+        <td><content textType="body" fontSize="11" textAlign="center"><p>商城</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>products / cart / orders</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>物流</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>shipments / temperature_logs / track_points</p></content></td>
+      </tr>
+      <tr height="27">
+        <td><content textType="body" fontSize="11" textAlign="center"><p>资金</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>wallet_transactions</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>沟通/审计</p></content></td>
+        <td><content textType="body" fontSize="11" textAlign="center"><p>order_messages / tamper_logs</p></content></td>
+      </tr>
+    </table>
+  </data>
+  <note><content textType="body"><p>数据库分层：业务数据存 MySQL 明文可读，每条记录的哈希上链；三层模型让溯源链路清晰。</p></content></note>
+</slide>

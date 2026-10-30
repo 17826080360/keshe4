@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# 本地数据
+*.db
+*.sqlite
+*.sqlite3
+instance/
+
+# 截图和临时文件
+shots/
+*.log
+*.tmp
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# 大文件 / 产物
+*.pptx
+!农产品溯源区块链系统·安心商城 课程汇报.pptx
